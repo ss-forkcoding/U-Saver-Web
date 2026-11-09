@@ -1,7 +1,7 @@
 // 사이트 문구의 단일 출처. 앱 범위는 u-saver/ai-docs/decisions 와 맞춘다. "전체 백업" 표현은 쓰지 않는다.
 export const site = {
   name: "U-Saver",
-  url: "https://u-saver-web.vercel.app",
+  url: "https://usaver.fork-coding.com",
   copyright: "© 2026 NextGenAI Co.",
   supportEmail: "khan@nextgenai.kr",
   description: "컴퓨터 없이 일반 USB로 아이폰 사진·영상·연락처를 백업하고 복원하는 앱입니다.",

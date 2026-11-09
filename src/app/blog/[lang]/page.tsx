@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogHeader } from "@/components/BlogHeader";
 import { PostDate } from "@/components/PostDate";
-import { blogCopy, blogLangs, isBlogLang, site } from "@/content/site";
+import { blogLanguages, blogPath, blogPreview } from "@/content/seo";
+import { blogCopy, isBlogLang, site } from "@/content/site";
 import { getPosts } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string }> }>;
@@ -14,9 +15,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${blogCopy[lang].title} | ${site.name}`,
     description: blogCopy[lang].description,
     alternates: {
-      canonical: `/blog/${lang}`,
-      languages: Object.fromEntries(blogLangs.map((item) => [item, `/blog/${item}`])),
+      canonical: blogPath(lang),
+      languages: blogLanguages(),
     },
+    ...blogPreview({ lang, path: blogPath(lang), title: blogCopy[lang].title, description: blogCopy[lang].description }),
   };
 }
 

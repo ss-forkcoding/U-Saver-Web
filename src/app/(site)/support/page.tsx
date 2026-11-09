@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { FeedbackForm } from "@/components/FeedbackForm";
 import { Mascot } from "@/components/Mascot";
+import { sitePreview } from "@/content/seo";
 import { contactChecklist, eyebrows, feedbackCopy, faqs, refundUrl, site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "지원",
   description: `${site.name} 문의 방법과 자주 묻는 질문입니다.`,
+  alternates: { canonical: "/support" },
+  ...sitePreview("/support", {
+    title: `${site.name} 지원`,
+    description: `${site.name} 문의 방법과 자주 묻는 질문입니다.`,
+  }),
 };
 
 export default function SupportPage() {

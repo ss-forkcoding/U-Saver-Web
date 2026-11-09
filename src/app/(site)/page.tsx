@@ -1,11 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ConditionIcon } from "@/components/ConditionIcon";
+import { JsonLd } from "@/components/JsonLd";
 import { Mascot } from "@/components/Mascot";
+import { publisher, sitePreview } from "@/content/seo";
 import { backupOptions, conditions, eyebrows, heroActions, homeHeadings, site, steps } from "@/content/site";
+
+const homeTitle = `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  ...sitePreview("/", { title: homeTitle, description: site.description }),
+};
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  inLanguage: "ko",
+  description: site.description,
+  publisher,
+};
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       <section className="panel">
         <p className="eyebrow">{eyebrows.hero}</p>
         <h1>

@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { BlogHeader } from "@/components/BlogHeader";
+import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
-import { blogCopy, blogLangs, isBlogLang, site } from "@/content/site";
-import { getPost, getSlugs } from "@/lib/blog";
+import { blogLanguages, blogPath, blogPreview, ogImage, publisher } from "@/content/seo";
+import { blogCopy, isBlogLang, site } from "@/content/site";
+import { getPost, getSlugs, type Post } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string; slug: string }> }>;
 
@@ -21,9 +23,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | ${site.name}`,
     description: post.description,
     alternates: {
-      canonical: `/blog/${lang}/${slug}`,
-      languages: Object.fromEntries(blogLangs.map((item) => [item, `/blog/${item}/${slug}`])),
+      canonical: blogPath(post.lang, post.slug),
+      languages: blogLanguages(post.slug),
     },
+    ...blogPreview({
+      lang: post.lang,
+      path: blogPath(post.lang, post.slug),
+      title: post.title,
+      description: post.description,
+      publishedTime: post.date,
+    }),
+  };
+}
+
+function postJsonLd(post: Post) {
+  const url = `${site.url}${blogPath(post.lang, post.slug)}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        inLanguage: post.lang,
+        url,
+        mainEntityOfPage: url,
+        image: `${site.url}${ogImage.url}`,
+        author: publisher,
+        publisher,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: site.name, item: site.url },
+          { "@type": "ListItem", position: 2, name: blogCopy[post.lang].title, item: `${site.url}${blogPath(post.lang)}` },
+          { "@type": "ListItem", position: 3, name: post.title, item: url },
+        ],
+      },
+    ],
   };
 }
 
@@ -34,6 +72,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={postJsonLd(post)} />
       <BlogHeader lang={post.lang} slug={post.slug} />
       <article>
         <header className="panel panel-short">
