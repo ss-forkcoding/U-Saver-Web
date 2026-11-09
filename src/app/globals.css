@@ -1,0 +1,280 @@
+/* 색은 앱과 같은 3색만 쓴다. 규칙은 DESIGN.md 참조. */
+:root {
+  --color-midnight: #191970;
+  --color-horizon: #58a6ff;
+  --color-white: #ffffff;
+
+  --gap-1: 8px;
+  --gap-2: 16px;
+  --gap-3: 24px;
+  --gap-4: 40px;
+  --gap-5: 64px;
+  --gap-6: 112px;
+
+  --radius-control: 8px;
+  --page-width: 1040px;
+  --text-body: 1.0625rem;
+  --text-small: 1rem;
+  --text-h3: 1.25rem;
+  --text-h2: 1.75rem;
+  --text-h1: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-midnight);
+  color: var(--color-white);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+p,
+dl,
+dd,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-horizon);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.surface-white a:focus-visible {
+  outline-color: var(--color-midnight);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto;
+  padding-inline: var(--gap-3);
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.site-footer {
+  padding-block: var(--gap-3);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-h3);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  align-items: center;
+  gap: var(--gap-5);
+  padding-block: var(--gap-5) var(--gap-6);
+}
+
+.lead {
+  margin-block: var(--gap-3);
+  font-size: var(--text-h3);
+  line-height: 1.55;
+  max-width: 34em;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.usb-glyph {
+  width: 100%;
+  height: auto;
+  color: var(--color-horizon);
+}
+
+.section {
+  padding-block: var(--gap-5);
+}
+
+.section-note {
+  margin-top: var(--gap-1);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-4);
+  margin-top: var(--gap-3);
+}
+
+.options dt,
+.conditions dt,
+.faq dt {
+  font-weight: 600;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin-top: var(--gap-3);
+}
+
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  padding-block: var(--gap-3);
+}
+
+.steps li::before {
+  content: counter(step);
+  grid-row: 1 / span 2;
+  font-size: var(--text-h2);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.surface-white {
+  background: var(--color-white);
+  color: var(--color-midnight);
+}
+
+.conditions {
+  margin-block: var(--gap-4);
+}
+
+.conditions > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: var(--gap-2);
+  padding-block: var(--gap-2);
+}
+
+.faq {
+  margin-block: var(--gap-3);
+}
+
+.faq > div {
+  padding-block: var(--gap-3);
+}
+
+.faq dd {
+  margin-top: var(--gap-1);
+  max-width: 44em;
+}
+
+.page-head {
+  padding-block: var(--gap-5);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding-inline: var(--gap-4);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  color: var(--color-midnight);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:active {
+  background: var(--color-horizon);
+}
+
+.email-text {
+  margin-top: var(--gap-2);
+}
+
+.checklist-title {
+  margin-top: var(--gap-5);
+  font-size: var(--text-h3);
+}
+
+.checklist {
+  margin-top: var(--gap-2);
+  padding-left: 1.25em;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-4);
+    padding-block: var(--gap-4) var(--gap-5);
+  }
+
+  .usb-glyph {
+    width: 96px;
+    grid-row: 1;
+  }
+
+  .options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gap-3);
+  }
+
+  .conditions > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}

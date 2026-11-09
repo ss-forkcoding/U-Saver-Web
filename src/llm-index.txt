@@ -1,0 +1,7 @@
+# src
+ROLE: 웹 소스 · 라우트, 문구, 공용 그림
+
+## dirs
+app/ → app/llm-index.txt
+components/UsbGlyph.tsx — 앱 홈과 같은 테두리 USB 아이콘
+content/site.ts — 사이트 문구와 연락처, 조건 목록의 단일 출처

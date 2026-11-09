@@ -1,0 +1,14 @@
+# U-Saver-Web
+ROLE: 웹 · App Store 마케팅 URL과 지원 URL을 제공하는 Next.js 사이트
+정적 페이지 2개로 구성한다. 문구는 src/content/site.ts 한 곳에서 관리한다.
+
+## dirs
+src/ → src/llm-index.txt
+
+## files
+AGENTS.md — Next.js 에이전트 규칙과 사이트 구조
+DESIGN.md — 사용자층, Named Rules
+eslint.config.mjs — ESLint 설정
+next.config.ts — Next.js 설정
+package.json — bun 스크립트와 의존성
+tsconfig.json — TypeScript 설정
