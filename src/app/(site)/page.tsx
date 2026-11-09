@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={homeJsonLd} />
-      <section className="panel">
+      <section className="panel panel-usb">
         <p className="eyebrow">{eyebrows.hero}</p>
         <h1>
           {homeHeadings.heroLines[0]}

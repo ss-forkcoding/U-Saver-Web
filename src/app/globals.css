@@ -171,6 +171,35 @@ summary:focus-visible {
   padding-bottom: var(--gap-5);
 }
 
+/* 홈 패널의 USB 실루엣. shape()를 모르는 브라우저는 둥근 사각형 패널을 유지한다. */
+@supports (clip-path: shape(from 0 0, hline to 0)) {
+  .panel-usb {
+    --usb-plug-half: calc(min(58%, 640px) / 2);
+    --usb-shoulder: 112px;
+    --usb-plug-radius: 28px;
+    --usb-body-radius: clamp(36px, 6vw, 72px);
+    border-radius: 0;
+    clip-path: shape(
+      from calc(50% - var(--usb-plug-half) + var(--usb-plug-radius)) 0,
+      hline to calc(50% + var(--usb-plug-half) - var(--usb-plug-radius)),
+      arc to calc(50% + var(--usb-plug-half)) var(--usb-plug-radius) of var(--usb-plug-radius) cw,
+      vline to var(--usb-shoulder),
+      hline to calc(100% - var(--usb-body-radius)),
+      arc to 100% calc(var(--usb-shoulder) + var(--usb-body-radius)) of var(--usb-body-radius) cw,
+      vline to calc(100% - var(--usb-body-radius)),
+      arc to calc(100% - var(--usb-body-radius)) 100% of var(--usb-body-radius) cw,
+      hline to var(--usb-body-radius),
+      arc to 0 calc(100% - var(--usb-body-radius)) of var(--usb-body-radius) cw,
+      vline to calc(var(--usb-shoulder) + var(--usb-body-radius)),
+      arc to var(--usb-body-radius) var(--usb-shoulder) of var(--usb-body-radius) cw,
+      hline to calc(50% - var(--usb-plug-half)),
+      vline to var(--usb-plug-radius),
+      arc to calc(50% - var(--usb-plug-half) + var(--usb-plug-radius)) 0 of var(--usb-plug-radius) cw,
+      close
+    );
+  }
+}
+
 .eyebrow {
   font-family: var(--font-hand), "Apple SD Gothic Neo", sans-serif;
   font-size: var(--text-eyebrow);
@@ -751,6 +780,11 @@ html:lang(ja) h2 {
   .panel {
     padding-top: 112px;
     padding-inline: var(--gap-2);
+  }
+
+  .panel-usb {
+    --usb-shoulder: 88px;
+    --usb-plug-radius: 20px;
   }
 
   .action-row .pill {
