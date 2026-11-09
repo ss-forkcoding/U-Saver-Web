@@ -2,7 +2,7 @@
 ROLE: 웹 라우트 · 한국어 마케팅과 지원 페이지
 
 ## dirs
-support/page.tsx — 지원 URL 페이지, 문의 방법과 자주 묻는 질문
+support/ — page.tsx 지원 URL 페이지, actions.ts 의견 접수 서버 액션
 
 ## files
 layout.tsx — 사이트 루트 레이아웃, 공통 머리글·바닥글

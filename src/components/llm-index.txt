@@ -4,5 +4,6 @@ ROLE: 웹 UI · 페이지 공용 컴포넌트
 ## files
 BlogHeader.tsx — 블로그 머리글과 언어 전환 링크
 ConditionIcon.tsx — 구매 조건 선 아이콘
+FeedbackForm.tsx — 지원 페이지 의견 입력 폼
 Mascot.tsx — 마스코트 이미지
 PostDate.tsx — 언어별 글 날짜 표시

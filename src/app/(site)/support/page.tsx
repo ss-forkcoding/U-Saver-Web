@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { FeedbackForm } from "@/components/FeedbackForm";
 import { Mascot } from "@/components/Mascot";
-import { contactChecklist, eyebrows, faqs, refundUrl, site } from "@/content/site";
+import { contactChecklist, eyebrows, feedbackCopy, faqs, refundUrl, site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "지원",
@@ -23,6 +24,9 @@ export default function SupportPage() {
             href={`mailto:${site.supportEmail}?subject=${encodeURIComponent(`${site.name} 문의`)}`}
           >
             이메일 보내기
+          </a>
+          <a className="pill" href="#feedback">
+            {feedbackCopy.shortcut}
           </a>
         </div>
         <div className="meta">
@@ -57,6 +61,13 @@ export default function SupportPage() {
               Apple 문제 신고 페이지 열기
             </a>
           </p>
+        </section>
+
+        <section id="feedback" className="rail-section" aria-labelledby="feedback-title">
+          <p className="eyebrow">{feedbackCopy.eyebrow}</p>
+          <h2 id="feedback-title">{feedbackCopy.title}</h2>
+          <p className="section-note">{feedbackCopy.note}</p>
+          <FeedbackForm />
         </section>
       </div>
     </>

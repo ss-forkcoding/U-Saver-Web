@@ -4,9 +4,12 @@ ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 다국어 블로그를 제공�
 
 ## dirs
 .claude/skills/copywriting/ — 이 프로젝트 전용 카피 스킬, coreyhaines31/marketingskills(MIT) 복사본
+ai-docs/plans/blog-keywords/ → ai-docs/plans/blog-keywords/llm-index.txt (gitignore 대상)
+scripts/feedback-apps-script.gs — 의견을 시트에 쌓는 Apps Script 원본
 src/ → src/llm-index.txt
 
 ## files
+.env.example — 의견 웹훅 환경 변수 이름
 AGENTS.md — Next.js 에이전트 규칙과 사이트 구조
 DESIGN.md — 사용자층, Named Rules
 eslint.config.mjs — ESLint 설정

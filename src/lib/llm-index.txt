@@ -1,0 +1,8 @@
+# src/lib
+ROLE: 서버 로직 · 블로그 원고 읽기와 의견 접수
+
+## dirs
+feedback/ — core.ts 검증·한도 판단, rate-limit.ts IP별 한도, sheet.ts Apps Script 전송
+
+## files
+blog.ts — 마크다운 글 읽기와 번역 누락·frontmatter 검증
