@@ -4,7 +4,7 @@ description: "Your iPhone, USB format, power, and the other conditions to confir
 date: 2026-11-09
 ---
 
-U-Saver backs up and restores iPhone photos, videos, and contacts on a regular USB drive, with no computer needed. The app is currently being prepared for the App Store. There is no free trial, so please check the conditions below before you buy.
+U-Saver backs up and restores iPhone photos, videos, and contacts on a regular USB drive, with no computer needed. The app is currently being prepared for the App Store. Please check the conditions below before you buy.
 
 ## iPhone
 

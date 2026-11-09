@@ -31,12 +31,6 @@ const paths: Record<IconName, ReactNode> = {
       <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5" />
     </>
   ),
-  ban: (
-    <>
-      <circle cx="12" cy="12" r="9" />
-      <path d="m5.8 5.8 12.4 12.4" />
-    </>
-  ),
 };
 
 // 조건 목록의 선 아이콘. 옆 이름이 뜻을 전달하므로 보조 기술에서 숨긴다.

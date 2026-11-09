@@ -81,7 +81,7 @@ export default function HomePage() {
         <section id="conditions" className="rail-section" aria-labelledby="conditions-title">
           <p className="eyebrow">{eyebrows.conditions}</p>
           <h2 id="conditions-title">{homeHeadings.conditions}</h2>
-          <p className="section-note">무료 체험이 없습니다. 아래 조건이 맞는지 먼저 확인하세요.</p>
+          <p className="section-note">아래 조건이 맞는지 먼저 확인하세요.</p>
           <dl className="conditions">
             {conditions.map((item) => (
               <div key={item.label}>
