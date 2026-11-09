@@ -5,9 +5,9 @@ import remarkGfm from "remark-gfm";
 import { BlogHeader } from "@/components/BlogHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
-import { blogLanguages, blogPath, blogPreview, ogImage, publisher } from "@/content/seo";
+import { blogLanguages, blogPath, blogPreview, faqJsonLd, ogImage, publisher } from "@/content/seo";
 import { blogCopy, isBlogLang, site } from "@/content/site";
-import { getPost, getSlugs, type Post } from "@/lib/blog";
+import { extractFaqs, getPost, getSlugs, type Post } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string; slug: string }> }>;
 
@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function postJsonLd(post: Post) {
   const url = `${site.url}${blogPath(post.lang, post.slug)}`;
+  const faqs = extractFaqs(post.body);
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -61,6 +62,7 @@ function postJsonLd(post: Post) {
           { "@type": "ListItem", position: 3, name: post.title, item: url },
         ],
       },
+      ...(faqs.length > 0 ? [faqJsonLd(faqs)] : []),
     ],
   };
 }

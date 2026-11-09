@@ -1,10 +1,12 @@
 # U-Saver-Web
-ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 다국어 블로그를 제공하는 Next.js 사이트
+ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 개인정보 처리방침 URL, 다국어 블로그를 제공하는 Next.js 사이트
 정적 페이지와 ko·en·ja 마크다운 블로그로 구성한다. 문구는 src/content/site.ts, 글은 src/content/blog 에서 관리한다.
 
 ## dirs
 .claude/skills/copywriting/ — 이 프로젝트 전용 카피 스킬, coreyhaines31/marketingskills(MIT) 복사본
 ai-docs/plans/blog-keywords/ → ai-docs/plans/blog-keywords/llm-index.txt (gitignore 대상)
+public/brand/u-saver-lockup-light.svg — 머리글 로고, 여백을 잘라낸 웹용 사본
+public/screens/ — 사용 화면 목업에 넣는 앱 캡처 5장, 상태 표시줄을 지운 웹용 webp
 public/og-image.png — 링크 미리보기 이미지 1200×630
 scripts/feedback-apps-script.gs — 의견을 시트에 쌓는 Apps Script 원본
 src/ → src/llm-index.txt

@@ -21,6 +21,7 @@
   --text-small: 1rem;
   --text-h3: 1.25rem;
   --text-h2: clamp(1.875rem, 4vw, 2.75rem);
+  --text-h2-compact: 1.625rem;
   --text-h1: clamp(2.125rem, 5.2vw, 3.75rem);
   --text-eyebrow: 1.625rem;
 }
@@ -127,6 +128,21 @@ summary:focus-visible {
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+
+/* 좁은 화면에서는 언어 메뉴가 잘리지 않게 로고의 심볼 부분만 보여 준다. */
+@media (max-width: 399px) {
+  .brand-logo {
+    width: 32px;
+    object-fit: cover;
+    object-position: left center;
+  }
 }
 
 .nav-link {
@@ -435,20 +451,81 @@ summary:focus-visible {
   margin-top: var(--gap-1);
 }
 
-.steps {
-  list-style: none;
-  counter-reset: step;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--gap-5) var(--gap-4);
+/* 가운데 목업이 멈춰 있고 단계 설명이 양옆으로 지나간다. */
+.showcase {
+  --device-width: 280px;
+  --device-height: 586px;
   margin-top: var(--gap-5);
 }
 
-.steps li {
-  counter-increment: step;
+.showcase-stage {
+  position: sticky;
+  top: calc(50vh - var(--device-height) / 2);
+  z-index: 1;
+  width: var(--device-width);
+  height: var(--device-height);
+  margin-inline: auto;
 }
 
-.steps li::before {
+.device {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: 8px solid var(--color-midnight);
+  border-radius: 48px;
+  background: var(--color-midnight);
+}
+
+.device::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 2;
+  width: 84px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  background: var(--color-midnight);
+  transform: translateX(-50%);
+}
+
+.device-screen {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+
+.device-screen[data-active] {
+  opacity: 1;
+}
+
+.device-screen img {
+  object-fit: cover;
+}
+
+.showcase-steps {
+  list-style: none;
+  counter-reset: step;
+  margin-top: calc(var(--device-height) * -1);
+}
+
+.showcase-steps li {
+  counter-increment: step;
+  display: flex;
+  align-items: center;
+  min-height: 76vh;
+}
+
+.showcase-steps li:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.showcase-steps li > div {
+  width: calc(50% - var(--device-width) / 2 - var(--gap-3));
+}
+
+.showcase-steps li > div::before {
   content: counter(step);
   display: grid;
   place-items: center;
@@ -459,10 +536,68 @@ summary:focus-visible {
   border-radius: 50%;
   font-size: var(--text-h3);
   font-weight: 600;
+  transition: background-color 250ms ease-out, color 250ms ease-out;
 }
 
-.steps p {
+.showcase-steps li[aria-current] > div::before {
+  background: var(--color-midnight);
+  color: var(--color-white);
+}
+
+.showcase-steps p {
   margin-top: var(--gap-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device-screen,
+  .showcase-steps li > div::before {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .showcase {
+    --device-width: 190px;
+    --device-height: 398px;
+  }
+
+  .showcase-stage {
+    top: 0;
+    width: auto;
+    height: auto;
+    padding-block: var(--gap-2);
+    background: var(--color-white);
+  }
+
+  .device {
+    width: var(--device-width);
+    height: var(--device-height);
+    margin-inline: auto;
+    border-width: 6px;
+    border-radius: 34px;
+  }
+
+  .device::before {
+    top: 8px;
+    width: 60px;
+    height: 16px;
+  }
+
+  .showcase-steps {
+    margin-top: 0;
+  }
+
+  .showcase-steps li,
+  .showcase-steps li:nth-child(even) {
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 46vh;
+    padding-top: var(--gap-3);
+  }
+
+  .showcase-steps li > div {
+    width: 100%;
+  }
 }
 
 .conditions {
@@ -491,48 +626,81 @@ summary:focus-visible {
   text-align: left;
 }
 
-.faq details + details {
+.faq-item {
+  padding: var(--gap-3);
+}
+
+.faq-item + .faq-item {
   border-top: 1px solid var(--color-hairline);
 }
 
-.faq summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--gap-2);
-  min-height: 72px;
-  padding: var(--gap-2) var(--gap-3);
+.faq-item h3 {
+  font-size: var(--text-h3);
   font-weight: 600;
-  cursor: pointer;
-  list-style: none;
 }
 
-.faq summary:focus-visible {
-  outline-offset: -3px;
+.faq-item p {
+  margin-top: var(--gap-1);
 }
 
-.faq summary::-webkit-details-marker {
-  display: none;
+.faq-updated {
+  font-size: var(--text-small);
 }
 
-.faq summary::after {
-  content: "+";
-  flex: none;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1;
+.policy {
+  padding-block: var(--gap-5);
+  text-align: left;
 }
 
-.faq details[open] summary::after {
-  content: "−";
+.policy h2 {
+  font-size: var(--text-h2-compact);
 }
 
-.faq summary:hover {
-  background: var(--color-horizon);
+.policy p {
+  margin-top: var(--gap-2);
 }
 
-.faq details p {
-  padding: 0 var(--gap-3) var(--gap-3);
+.policy .faq {
+  margin-block: var(--gap-3) 0;
+}
+
+.policy-notice {
+  font-weight: 600;
+}
+
+.policy-facts {
+  margin: var(--gap-2) 0 0;
+}
+
+.policy-facts > div {
+  display: grid;
+  grid-template-columns: 6.5em 1fr;
+  gap: var(--gap-2);
+  padding-block: var(--gap-1);
+}
+
+.policy-facts dt {
+  font-weight: 600;
+}
+
+.policy-facts dd {
+  margin: 0;
+}
+
+.policy-list {
+  margin: var(--gap-2) 0 0;
+  padding-left: 1.25em;
+}
+
+.policy-list li + li {
+  margin-top: var(--gap-1);
+}
+
+@media (max-width: 640px) {
+  .policy-facts > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 .site-footer {
@@ -820,7 +988,6 @@ html:lang(ja) h2 {
   }
 
   .options,
-  .steps,
   .conditions {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -830,11 +997,7 @@ html:lang(ja) h2 {
     border-top: 1px solid var(--color-hairline);
   }
 
-  .faq summary {
-    padding-inline: 20px;
-  }
-
-  .faq details p {
-    padding-inline: 20px;
+  .faq-item {
+    padding: var(--gap-2);
   }
 }

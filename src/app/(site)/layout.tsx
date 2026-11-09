@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ogImage } from "@/content/seo";
+import { BrandLogo } from "@/components/BrandLogo";
+import { ogImage, siteAuthors } from "@/content/seo";
 import { site } from "@/content/site";
 import { hand } from "../fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  authors: siteAuthors,
   title: { default: `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`, template: `%s | ${site.name}` },
   description: site.description,
   openGraph: { type: "website", siteName: site.name, locale: "ko_KR", images: [ogImage] },
@@ -19,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="site-header wrap">
           <Link className="brand" href="/">
-            {site.name}
+            <BrandLogo />
           </Link>
           <nav aria-label="주요 메뉴">
             <Link className="nav-link" href="/blog/ko">
@@ -35,6 +37,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <p>{site.copyright}</p>
           <Link className="nav-link" href="/support">
             지원
+          </Link>
+          <Link className="nav-link" href="/privacy">
+            개인정보 처리방침
           </Link>
         </footer>
       </body>

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ConditionIcon } from "@/components/ConditionIcon";
+import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
+import { PostDate } from "@/components/PostDate";
+import { StepsShowcase } from "@/components/StepsShowcase";
 import { TrackingMascot } from "@/components/TrackingMascot";
-import { publisher, sitePreview } from "@/content/seo";
-import { backupOptions, conditions, eyebrows, heroActions, homeHeadings, site, steps } from "@/content/site";
+import { faqJsonLd, publisher, sitePreview } from "@/content/seo";
+import { backupOptions, conditions, eyebrows, heroActions, homeFaqs, homeHeadings, site, steps } from "@/content/site";
 
 const homeTitle = `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`;
 
@@ -15,12 +18,27 @@ export const metadata: Metadata = {
 
 const homeJsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: site.name,
-  url: site.url,
-  inLanguage: "ko",
-  description: site.description,
-  publisher,
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: site.name,
+      url: site.url,
+      inLanguage: "ko",
+      description: site.description,
+      publisher,
+    },
+    {
+      "@type": "MobileApplication",
+      name: site.name,
+      url: site.url,
+      description: site.description,
+      operatingSystem: "iOS 26 이상",
+      applicationCategory: "UtilitiesApplication",
+      author: publisher,
+      offers: { "@type": "Offer", price: "4900", priceCurrency: "KRW" },
+    },
+    faqJsonLd(homeFaqs),
+  ],
 };
 
 export default function HomePage() {
@@ -68,14 +86,7 @@ export default function HomePage() {
         <section id="steps" className="rail-section" aria-labelledby="steps-title">
           <p className="eyebrow">{eyebrows.steps}</p>
           <h2 id="steps-title">{homeHeadings.steps}</h2>
-          <ol className="steps">
-            {steps.map((step) => (
-              <li key={step.title}>
-                <h3>{step.title}</h3>
-                <p>{step.detail}</p>
-              </li>
-            ))}
-          </ol>
+          <StepsShowcase steps={steps} />
         </section>
 
         <section id="conditions" className="rail-section" aria-labelledby="conditions-title">
@@ -93,6 +104,15 @@ export default function HomePage() {
           </dl>
           <p>
             궁금한 점은 <Link href="/support">지원 페이지</Link>에서 확인하세요.
+          </p>
+        </section>
+
+        <section id="faq" className="rail-section" aria-labelledby="home-faq-title">
+          <p className="eyebrow">{eyebrows.faq}</p>
+          <h2 id="home-faq-title">{homeHeadings.faq}</h2>
+          <FaqList items={homeFaqs} />
+          <p className="faq-updated">
+            마지막 수정 <PostDate date={site.updatedOn} lang="ko" />
           </p>
         </section>
       </div>

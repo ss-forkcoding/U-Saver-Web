@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { siteAuthors } from "@/content/seo";
 import { blogLangs, isBlogLang, site } from "@/content/site";
 import { hand } from "../../fonts";
 import "../../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  authors: siteAuthors,
 };
 
 export function generateStaticParams() {

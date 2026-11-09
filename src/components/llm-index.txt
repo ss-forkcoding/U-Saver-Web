@@ -3,9 +3,12 @@ ROLE: 웹 UI · 페이지 공용 컴포넌트
 
 ## files
 BlogHeader.tsx — 블로그 머리글과 언어 전환 링크
+BrandLogo.tsx — 머리글 로고 이미지
 ConditionIcon.tsx — 구매 조건 선 아이콘
+FaqList.tsx — 질문 제목과 답 문단, 출처 링크 목록
 FeedbackForm.tsx — 지원 페이지 의견 입력 폼
 JsonLd.tsx — 구조화 데이터 script 태그
 Mascot.tsx — 부위별로 나뉜 USB 마스코트 SVG
 PostDate.tsx — 언어별 글 날짜 표시
+StepsShowcase.tsx — 가운데 아이폰 목업의 화면이 스크롤에 맞춰 바뀌는 사용법
 TrackingMascot.tsx — 홈 히어로에서 커서 쪽으로 자세를 바꾸는 마스코트

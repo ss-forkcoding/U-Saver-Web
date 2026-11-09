@@ -81,3 +81,22 @@ export function getPost(lang: BlogLang, slug: string): Post | undefined {
 export function getSlugs(): readonly string[] {
   return getPosts(blogLangs[0]).map((post) => post.slug);
 }
+
+function plainText(markdown: string): string {
+  return markdown
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// 질문으로 끝나는 제목과 바로 다음 문단을 묶는다. 표나 목록으로 이어지는 제목은 답이 문단이 아니므로 뺀다.
+export function extractFaqs(body: string): ReadonlyArray<Readonly<{ q: string; a: string }>> {
+  const blocks = body.split(/\n\s*\n/).map((block) => block.trim());
+  return blocks.flatMap((block, index) => {
+    const heading = /^#{2,3}\s+(.+[?？])$/.exec(block);
+    const answer = blocks[index + 1];
+    if (!heading?.[1] || !answer || /^[#|\-]/.test(answer)) return [];
+    return [{ q: plainText(heading[1]), a: plainText(answer) }];
+  });
+}

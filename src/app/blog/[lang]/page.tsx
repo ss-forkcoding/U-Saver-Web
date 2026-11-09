@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogHeader } from "@/components/BlogHeader";
+import { FaqList } from "@/components/FaqList";
+import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
-import { blogLanguages, blogPath, blogPreview } from "@/content/seo";
+import { blogLanguages, blogPath, blogPreview, faqJsonLd, publisher } from "@/content/seo";
 import { blogCopy, isBlogLang, site } from "@/content/site";
 import { getPosts } from "@/lib/blog";
 
@@ -28,8 +30,32 @@ export default async function BlogListPage({ params }: Props) {
   const copy = blogCopy[lang];
   const posts = getPosts(lang);
 
+  const url = `${site.url}${blogPath(lang)}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        name: `${copy.title} | ${site.name}`,
+        description: copy.description,
+        inLanguage: lang,
+        url,
+        author: publisher,
+        publisher,
+        blogPost: posts.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          datePublished: post.date,
+          url: `${site.url}${blogPath(lang, post.slug)}`,
+        })),
+      },
+      faqJsonLd(copy.guide),
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <BlogHeader lang={lang} />
       <section className="panel panel-short">
         <p className="eyebrow">{copy.eyebrow}</p>
@@ -54,6 +80,11 @@ export default async function BlogListPage({ params }: Props) {
               ))}
             </ul>
           )}
+        </section>
+
+        <section className="rail-section" aria-labelledby="blog-guide-title">
+          <h2 id="blog-guide-title">{copy.guideTitle}</h2>
+          <FaqList items={copy.guide} />
         </section>
       </div>
     </>

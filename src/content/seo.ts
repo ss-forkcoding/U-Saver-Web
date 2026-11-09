@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
-import { blogLangs, site, type BlogLang } from "@/content/site";
+import { blogLangs, site, type BlogLang, type FaqItem } from "@/content/site";
 
 // 검색 결과와 링크 미리보기에 쓰는 값의 단일 출처.
 export const publisher = { "@type": "Organization", name: "NextGenAI Co.", url: site.url } as const;
+
+export const siteAuthors = [{ name: publisher.name, url: publisher.url }];
+
+export function faqJsonLd(items: readonly Pick<FaqItem, "q" | "a">[]) {
+  return {
+    "@type": "FAQPage",
+    author: publisher,
+    dateModified: site.updatedOn,
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
 
 export const ogImage = { url: "/og-image.png", width: 1200, height: 630, alt: site.name } as const;
 

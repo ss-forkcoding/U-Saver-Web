@@ -21,5 +21,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  return [{ url: site.url }, { url: `${site.url}/support` }, ...blogEntries];
+  return [{ url: site.url }, { url: `${site.url}/support` }, { url: `${site.url}/privacy` }, ...blogEntries];
 }
