@@ -78,7 +78,7 @@ If any of these five is a "no," don't delete the data from your iPhone.
 
 Moving between Photos and Contacts takes effort, and frequent backups mean repeating the same steps each time.
 
-U-Saver, made by NextGenAI, is an app that backs up photos, videos, and contacts to USB in one go and restores them. Plug in a drive, choose to back up everything, and press and hold the circle to begin. If it's interrupted, you can continue from the app's history. U-Saver is being prepared for the App Store and requires iOS 26 or later.
+U-Saver, made by NextGenAI, is an app that backs up photos, videos, and contacts to USB in one go and restores them. Plug in a drive, choose to back up everything, and press and hold the circle to begin. If it's interrupted, you can continue from the app's history. U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. If the drive is unplugged, the app waits 10 seconds. There are 2 backup modes: everything or photos only.
 
 It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Check the requirements in [Six things to check before using U-Saver](/blog/en/before-you-buy).
 

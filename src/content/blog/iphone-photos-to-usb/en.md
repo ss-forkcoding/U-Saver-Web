@@ -80,7 +80,7 @@ If iCloud Photos is on, deleting a photo from your iPhone also removes it from o
 
 Exporting through the Photos app works well for occasional transfers. You do have to select the photos and choose the location every time.
 
-U-Saver, made by NextGenAI, is an app that starts saving once you plug in a USB drive and choose to back up everything or photos only. Interrupted backups continue from the app's history, and the app restores what's on the drive to Photos and Contacts. U-Saver is being prepared for the App Store and requires iOS 26 or later.
+U-Saver, made by NextGenAI, is an app that starts saving once you plug in a USB drive and choose to back up everything or photos only. Interrupted backups continue from the app's history, and the app restores what's on the drive to Photos and Contacts. U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. If the drive is unplugged, the app waits 10 seconds. There are 2 backup modes: everything or photos only.
 
 It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Check whether it fits your setup in [Six things to check before using U-Saver](/blog/en/before-you-buy).
 

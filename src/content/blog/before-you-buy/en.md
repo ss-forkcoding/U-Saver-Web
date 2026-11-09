@@ -4,13 +4,15 @@ description: "Your iPhone, USB format, power, and the other conditions to confir
 date: 2026-11-09
 ---
 
-U-Saver backs up and restores iPhone photos, videos, and contacts on a regular USB drive, with no computer needed. The app is currently being prepared for the App Store. Please check the conditions below before you buy.
+U-Saver backs up and restores iPhone photos, videos, and contacts on a regular USB drive, with no computer needed. The app is currently being prepared for the App Store. In Korea it costs 4,900 KRW as a one-time purchase. Please check the conditions below before you buy.
 
-## iPhone
+## Which iPhones can use U-Saver?
 
-iOS 26 or later is required. iPhones with a Lightning connector need a USB adapter.
+U-Saver works on iPhones running iOS 26 or later. iPhones with a Lightning connector need a USB adapter. Apple explains how to connect a drive in its [guide to external storage](https://support.apple.com/guide/iphone/external-storage-devices-iph95baac91f/ios).
 
-## USB format
+## Which USB formats can I use?
+
+You can use USB drives formatted as exFAT or FAT32. If you plan to store videos larger than 4GB, choose exFAT. Apple lists both as supported formats for external storage.
 
 | Format | Supported | Good to know |
 | --- | --- | --- |
@@ -18,19 +20,21 @@ iOS 26 or later is required. iPhones with a Lightning connector need a USB adapt
 | FAT32 | Yes | Cannot store files larger than 4GB. |
 | NTFS | No | Not supported. |
 
-## Power
+## Do I need external power?
 
-Depending on the USB drive, your iPhone may need to be connected to external power.
+Depending on the USB drive, your iPhone may need to be connected to external power. If the drive does not appear in the Files app, connect power and plug the drive in again.
 
-## During a backup
+## Can I turn off the screen during a backup?
 
-Keep the app open. Backups are not guaranteed while the screen is locked. If a backup stops, you can continue it from the history list.
+Keep the app open. Backups are not guaranteed while the screen is locked. If the drive is unplugged, the app shows a warning and waits 10 seconds. If a backup stops, you can continue it from the history list.
 
-## Security
+## Is the data on the USB drive safe?
 
-Data saved to the USB drive is not encrypted. Please keep the drive somewhere safe.
+Data saved to the USB drive is not encrypted. Anyone who finds a lost drive can read it, so please keep the drive somewhere safe.
 
-## What is not backed up
+## What is not backed up?
+
+Messages, app data, and iPhone settings are not backed up. To keep those items, also use [Apple's iCloud or computer backup](https://support.apple.com/guide/iphone/back-up-iphone-iph3ecf67d29/ios). U-Saver has 2 backup modes: everything or photos only.
 
 - Messages
 - App data
