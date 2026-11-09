@@ -21,7 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  const siteEntries = ["", "/support", "/privacy"].flatMap((path) =>
+  // 개인정보 처리방침 같은 법적 고지는 검색 유입 대상이 아니라서 넣지 않는다.
+  const siteEntries = ["", "/support"].flatMap((path) =>
     langs.map((lang) => ({
       url: `${site.url}${sitePath(lang, path)}`,
       alternates: { languages: siteLanguages(path, site.url) },
