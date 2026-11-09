@@ -1,8 +1,9 @@
-/* 색은 앱과 같은 3색만 쓴다. 규칙은 DESIGN.md 참조. */
+/* 색은 앱의 3색에서만 파생한다. 규칙은 DESIGN.md 참조. */
 :root {
   --color-midnight: #191970;
   --color-horizon: #58a6ff;
   --color-white: #ffffff;
+  --color-hairline: rgb(25 25 112 / 0.16);
 
   --gap-1: 8px;
   --gap-2: 16px;
@@ -11,13 +12,17 @@
   --gap-5: 64px;
   --gap-6: 112px;
 
-  --radius-control: 8px;
-  --page-width: 1040px;
+  --radius-panel: 24px;
+  --radius-pill: 999px;
+  --panel-inset: 16px;
+  --page-width: 1240px;
+  --rail-width: 880px;
   --text-body: 1.0625rem;
   --text-small: 1rem;
   --text-h3: 1.25rem;
-  --text-h2: 1.75rem;
-  --text-h1: clamp(2.25rem, 6vw, 3.75rem);
+  --text-h2: clamp(1.875rem, 4vw, 2.75rem);
+  --text-h1: clamp(2.125rem, 5.2vw, 3.75rem);
+  --text-eyebrow: 1.625rem;
 }
 
 * {
@@ -30,8 +35,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-midnight);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-midnight);
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   font-size: var(--text-body);
   line-height: 1.65;
@@ -44,7 +49,8 @@ h2,
 h3 {
   margin: 0;
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
   text-wrap: balance;
 }
 
@@ -58,6 +64,8 @@ h2 {
 
 h3 {
   font-size: var(--text-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 p,
@@ -78,33 +86,31 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-a:focus-visible {
-  outline: 3px solid var(--color-horizon);
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-midnight);
   outline-offset: 3px;
-  border-radius: 2px;
-}
-
-.surface-white a:focus-visible {
-  outline-color: var(--color-midnight);
+  border-radius: 4px;
 }
 
 .wrap {
   width: 100%;
   max-width: var(--page-width);
   margin-inline: auto;
-  padding-inline: var(--gap-3);
+  padding-inline: var(--gap-4);
 }
 
-.site-header,
-.site-footer {
+/* 머리글은 첫 패널 위에 겹친다. */
+.site-header {
+  position: absolute;
+  top: var(--panel-inset);
+  left: 0;
+  right: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 72px;
-}
-
-.site-footer {
-  padding-block: var(--gap-3);
 }
 
 .brand {
@@ -112,7 +118,8 @@ a:focus-visible {
   align-items: center;
   min-height: 44px;
   font-size: var(--text-h3);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
 
@@ -124,157 +131,373 @@ a:focus-visible {
   justify-content: center;
 }
 
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 160px;
-  align-items: center;
-  gap: var(--gap-5);
-  padding-block: var(--gap-5) var(--gap-6);
+.panel {
+  position: relative;
+  margin: var(--panel-inset) var(--panel-inset) 0;
+  padding: 144px var(--gap-3) 0;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  text-align: center;
+  background:
+    radial-gradient(60% 44% at 42% 34%, var(--color-white) 0%, transparent 100%),
+    radial-gradient(56% 84% at 96% 18%, var(--color-horizon) 0%, transparent 78%),
+    radial-gradient(50% 68% at 0% 100%, var(--color-horizon) 0%, transparent 78%),
+    radial-gradient(38% 44% at 62% 108%, var(--color-horizon) 0%, transparent 80%),
+    color-mix(in srgb, var(--color-horizon) 26%, var(--color-white));
+}
+
+/* 패널의 입자 질감. 그림 요소 아래에 깔아 글자 대비를 해치지 않는다. */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-short {
+  padding-bottom: var(--gap-5);
+}
+
+.eyebrow {
+  font-family: var(--font-hand), "Apple SD Gothic Neo", sans-serif;
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.eyebrow + h1,
+.eyebrow + h2 {
+  margin-top: var(--gap-1);
 }
 
 .lead {
-  margin-block: var(--gap-3);
+  margin: var(--gap-2) auto 0;
+  max-width: 34em;
   font-size: var(--text-h3);
   line-height: 1.55;
-  max-width: 34em;
 }
 
-.status {
-  font-weight: 600;
-}
-
-.usb-glyph {
-  width: 100%;
-  height: auto;
-  color: var(--color-horizon);
-}
-
-.section {
-  padding-block: var(--gap-5);
-}
-
-.section-note {
-  margin-top: var(--gap-1);
-}
-
-.options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--gap-4);
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   margin-top: var(--gap-3);
 }
 
-.options dt,
-.conditions dt,
-.faq dt {
-  font-weight: 600;
-}
-
-.steps {
-  list-style: none;
-  counter-reset: step;
-  margin-top: var(--gap-3);
-}
-
-.steps li {
-  counter-increment: step;
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  padding-block: var(--gap-3);
-}
-
-.steps li::before {
-  content: counter(step);
-  grid-row: 1 / span 2;
-  font-size: var(--text-h2);
-  line-height: 1.1;
-  font-weight: 500;
-}
-
-.surface-white {
-  background: var(--color-white);
-  color: var(--color-midnight);
-}
-
-.conditions {
-  margin-block: var(--gap-4);
-}
-
-.conditions > div {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: var(--gap-2);
-  padding-block: var(--gap-2);
-}
-
-.faq {
-  margin-block: var(--gap-3);
-}
-
-.faq > div {
-  padding-block: var(--gap-3);
-}
-
-.faq dd {
-  margin-top: var(--gap-1);
-  max-width: 44em;
-}
-
-.page-head {
-  padding-block: var(--gap-5);
-}
-
-.button {
+.pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 52px;
-  padding-inline: var(--gap-4);
-  border-radius: var(--radius-control);
+  padding-inline: 28px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
   background: var(--color-white);
   color: var(--color-midnight);
   font-weight: 600;
   text-decoration: none;
 }
 
-.button:hover,
-.button:active {
-  background: var(--color-horizon);
+.pill-primary {
+  background: var(--color-midnight);
+  color: var(--color-white);
 }
 
-.email-text {
+.pill:hover,
+.pill:active {
+  border-color: var(--color-midnight);
+  background: var(--color-horizon);
+  color: var(--color-midnight);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--gap-3);
+  margin-top: var(--gap-2);
+  font-size: var(--text-small);
+}
+
+.meta-strong {
+  font-weight: 600;
+}
+
+.panel .mascot {
+  margin-inline: auto;
+}
+
+.panel-mascot {
+  width: 112px;
+  margin: 0 auto var(--gap-2);
+}
+
+/* 패널 아래 가장자리에서 잘리는 아이폰 틀. */
+.phone {
+  width: 320px;
+  height: 372px;
+  margin: var(--gap-5) auto 0;
+  padding-top: 84px;
+  border: 8px solid var(--color-midnight);
+  border-bottom: 0;
+  border-radius: 56px 56px 0 0;
+}
+
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 96px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: var(--color-midnight);
+  transform: translateX(-50%);
+}
+
+.phone .mascot {
+  width: 224px;
+}
+
+.mascot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rail {
+  max-width: var(--rail-width);
+  margin-inline: auto;
+  border-inline: 1px solid var(--color-hairline);
+}
+
+.rail-section {
+  padding: var(--gap-6) var(--gap-4);
+  text-align: center;
+  scroll-margin-top: var(--gap-2);
+}
+
+.rail-section + .rail-section {
+  border-top: 1px solid var(--color-hairline);
+}
+
+.section-note {
   margin-top: var(--gap-2);
 }
 
-.checklist-title {
-  margin-top: var(--gap-5);
+.options,
+.faq {
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--gap-4);
+}
+
+.options > div {
+  padding: var(--gap-4) var(--gap-3);
+}
+
+.options > div + div {
+  border-left: 1px solid var(--color-hairline);
+}
+
+.options dt,
+.conditions dt {
   font-size: var(--text-h3);
+  font-weight: 600;
+}
+
+.options dd,
+.conditions dd {
+  margin-top: var(--gap-1);
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-5) var(--gap-4);
+  margin-top: var(--gap-5);
+}
+
+.steps li {
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--gap-2);
+  border: 2px solid var(--color-midnight);
+  border-radius: 50%;
+  font-size: var(--text-h3);
+  font-weight: 600;
+}
+
+.steps p {
+  margin-top: var(--gap-1);
+}
+
+.conditions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-5) var(--gap-4);
+  margin-block: var(--gap-5);
+}
+
+.condition-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto var(--gap-2);
 }
 
 .checklist {
-  margin-top: var(--gap-2);
+  width: fit-content;
+  margin: var(--gap-3) auto 0;
   padding-left: 1.25em;
+  text-align: left;
+}
+
+.faq {
+  margin-block: var(--gap-4);
+  text-align: left;
+}
+
+.faq details + details {
+  border-top: 1px solid var(--color-hairline);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-2);
+  min-height: 72px;
+  padding: var(--gap-2) var(--gap-3);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary:focus-visible {
+  outline-offset: -3px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq summary:hover {
+  background: var(--color-horizon);
+}
+
+.faq details p {
+  padding: 0 var(--gap-3) var(--gap-3);
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: var(--gap-4);
+  border-top: 1px solid var(--color-hairline);
+  text-align: center;
+  font-size: var(--text-small);
 }
 
 @media (max-width: 640px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--gap-4);
-    padding-block: var(--gap-4) var(--gap-5);
+  :root {
+    --panel-inset: 8px;
+    --gap-6: 72px;
   }
 
-  .usb-glyph {
-    width: 96px;
-    grid-row: 1;
+  .wrap {
+    padding-inline: var(--gap-3);
   }
 
-  .options {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--gap-3);
+  .panel {
+    padding-top: 112px;
+    padding-inline: var(--gap-2);
   }
 
-  .conditions > div {
+  .action-row .pill {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .phone {
+    width: 244px;
+    height: 272px;
+    margin-top: var(--gap-4);
+    padding-top: 60px;
+    border-width: 6px;
+    border-radius: 44px 44px 0 0;
+  }
+
+  .phone::before {
+    top: 10px;
+    width: 76px;
+    height: 22px;
+  }
+
+  .phone .mascot {
+    width: 168px;
+  }
+
+  .rail {
+    border-inline: 0;
+  }
+
+  .rail-section {
+    padding-inline: var(--gap-3);
+  }
+
+  .options,
+  .steps,
+  .conditions {
     grid-template-columns: minmax(0, 1fr);
-    gap: 0;
+  }
+
+  .options > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--color-hairline);
+  }
+
+  .faq summary {
+    padding-inline: 20px;
+  }
+
+  .faq details p {
+    padding-inline: 20px;
   }
 }

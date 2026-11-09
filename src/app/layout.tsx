@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { Gaegu } from "next/font/google";
 import Link from "next/link";
 import { site } from "@/content/site";
 import "./globals.css";
+
+const hand = Gaegu({ weight: "700", subsets: ["latin"], variable: "--font-hand", display: "swap", preload: false });
 
 export const metadata: Metadata = {
   title: { default: `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`, template: `%s | ${site.name}` },
@@ -10,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={hand.variable}>
       <body>
         <header className="site-header wrap">
           <Link className="brand" href="/">
@@ -23,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </nav>
         </header>
         <main>{children}</main>
-        <footer className="site-footer wrap">
+        <footer className="site-footer rail">
           <p>{site.copyright}</p>
           <Link className="nav-link" href="/support">
             지원

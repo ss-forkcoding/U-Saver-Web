@@ -9,6 +9,21 @@ export const site = {
   price: "₩4,900 한 번 결제. 무료 체험과 앱 내 결제는 없습니다.",
 } as const;
 
+export const eyebrows = {
+  hero: "사진은 내 USB에",
+  options: "하나만 고르세요",
+  steps: "이렇게 씁니다",
+  conditions: "잠깐만요",
+  support: "도와드릴게요",
+  checklist: "빠르게 답하려면",
+  faq: "먼저 확인해 보세요",
+} as const;
+
+export const heroActions = [
+  { label: "구매 전 조건 보기", href: "#conditions", primary: true },
+  { label: "사용 순서 보기", href: "#steps", primary: false },
+] as const;
+
 export const backupOptions = [
   { name: "모두 백업", detail: "사진, 영상, 연락처를 USB에 저장합니다." },
   { name: "사진만", detail: "사진과 Live Photo를 저장합니다. 영상은 저장하지 않습니다." },
@@ -22,12 +37,12 @@ export const steps = [
 ] as const;
 
 export const conditions = [
-  { label: "아이폰", value: "iOS 26 이상이 필요합니다. Lightning 단자 아이폰은 USB 어댑터가 필요합니다." },
-  { label: "USB 형식", value: "exFAT과 FAT32를 사용합니다. NTFS는 지원하지 않습니다. FAT32는 4GB가 넘는 파일을 저장하지 못합니다." },
-  { label: "전원", value: "USB 종류에 따라 아이폰에 외부 전원을 연결해야 할 수 있습니다." },
-  { label: "사용 중", value: "백업하는 동안 앱을 켜 두세요. 화면이 잠긴 상태의 백업은 보장하지 않습니다." },
-  { label: "보안", value: "USB에 저장한 내용은 암호화되지 않습니다. USB를 안전하게 보관하세요." },
-  { label: "백업 제외", value: "메시지, 앱 데이터, 아이폰 설정은 저장하지 않습니다." },
+  { icon: "phone", label: "아이폰", value: "iOS 26 이상이 필요합니다. Lightning 단자 아이폰은 USB 어댑터가 필요합니다." },
+  { icon: "drive", label: "USB 형식", value: "exFAT과 FAT32를 사용합니다. NTFS는 지원하지 않습니다. FAT32는 4GB가 넘는 파일을 저장하지 못합니다." },
+  { icon: "bolt", label: "전원", value: "USB 종류에 따라 아이폰에 외부 전원을 연결해야 할 수 있습니다." },
+  { icon: "screen", label: "사용 중", value: "백업하는 동안 앱을 켜 두세요. 화면이 잠긴 상태의 백업은 보장하지 않습니다." },
+  { icon: "lock", label: "보안", value: "USB에 저장한 내용은 암호화되지 않습니다. USB를 안전하게 보관하세요." },
+  { icon: "ban", label: "백업 제외", value: "메시지, 앱 데이터, 아이폰 설정은 저장하지 않습니다." },
 ] as const;
 
 export const contactChecklist = ["아이폰 모델과 iOS 버전", "USB 제품명, 용량, 형식", "화면에 나온 문구와 발생 시점"] as const;
