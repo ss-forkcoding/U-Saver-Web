@@ -1,0 +1,8 @@
+# src/content
+ROLE: 콘텐츠 · 사이트 문구와 블로그 원고
+
+## dirs
+blog/<slug>/ — 글 하나당 ko.md, en.md, ja.md 세 파일
+
+## files
+site.ts — 사이트·블로그 문구와 연락처, 조건 목록의 단일 출처

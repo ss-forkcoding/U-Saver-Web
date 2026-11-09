@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Gaegu } from "next/font/google";
 import Link from "next/link";
 import { site } from "@/content/site";
-import "./globals.css";
-
-const hand = Gaegu({ weight: "700", subsets: ["latin"], variable: "--font-hand", display: "swap", preload: false });
+import { hand } from "../fonts";
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: { default: `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`, template: `%s | ${site.name}` },
@@ -20,6 +18,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             {site.name}
           </Link>
           <nav aria-label="주요 메뉴">
+            <Link className="nav-link" href="/blog/ko">
+              블로그
+            </Link>
             <Link className="nav-link" href="/support">
               지원
             </Link>

@@ -1,11 +1,12 @@
 # src/app
 ROLE: 웹 라우트 · App Router 페이지와 전역 스타일
+언어별 html lang 때문에 (site)와 blog/[lang]이 각각 루트 레이아웃을 갖는다.
 
 ## dirs
-support/page.tsx — 지원 URL 페이지, 문의 방법과 자주 묻는 질문
+(site)/ → (site)/llm-index.txt
+blog/ → blog/llm-index.txt
 
 ## files
+fonts.ts — 손글씨 아이브로 글꼴
 globals.css — 3색 토큰과 전체 스타일
 icon.png — 사이트 아이콘, 앱 아이콘 축소본
-layout.tsx — 공통 머리글·바닥글, 저작권 표시
-page.tsx — 마케팅 URL 페이지

@@ -4,5 +4,6 @@ ROLE: 웹 소스 · 라우트, 문구, 공용 그림
 ## dirs
 app/ → app/llm-index.txt
 assets/mascot.png — 3색으로 맞추고 흰 테두리를 입힌 USB 마스코트
-components/ — ConditionIcon.tsx 구매 조건 선 아이콘, Mascot.tsx 마스코트 이미지
-content/site.ts — 사이트 문구와 연락처, 조건 목록의 단일 출처
+components/ → components/llm-index.txt
+content/ → content/llm-index.txt
+lib/blog.ts — 마크다운 글 읽기와 번역 누락·frontmatter 검증

@@ -1,8 +1,9 @@
 # U-Saver-Web
-ROLE: 웹 · App Store 마케팅 URL과 지원 URL을 제공하는 Next.js 사이트
-정적 페이지 2개로 구성한다. 문구는 src/content/site.ts 한 곳에서 관리한다.
+ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 다국어 블로그를 제공하는 Next.js 사이트
+정적 페이지와 ko·en·ja 마크다운 블로그로 구성한다. 문구는 src/content/site.ts, 글은 src/content/blog 에서 관리한다.
 
 ## dirs
+.claude/skills/copywriting/ — 이 프로젝트 전용 카피 스킬, coreyhaines31/marketingskills(MIT) 복사본
 src/ → src/llm-index.txt
 
 ## files

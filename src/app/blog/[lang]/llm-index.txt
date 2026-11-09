@@ -1,0 +1,9 @@
+# src/app/blog/[lang]
+ROLE: 웹 라우트 · 언어별 블로그 목록과 글
+
+## dirs
+[slug]/page.tsx — 글 상세, 마크다운 렌더링과 언어별 대체 링크
+
+## files
+layout.tsx — 블로그 루트 레이아웃, 언어별 html lang
+page.tsx — 언어별 글 목록

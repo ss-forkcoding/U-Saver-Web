@@ -1,0 +1,5 @@
+# src/app/blog
+ROLE: 웹 라우트 · ko·en·ja 정적 블로그
+
+## dirs
+[lang]/ → [lang]/llm-index.txt

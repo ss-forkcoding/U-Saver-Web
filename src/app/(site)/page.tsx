@@ -1,14 +1,18 @@
 import Link from "next/link";
 import { ConditionIcon } from "@/components/ConditionIcon";
 import { Mascot } from "@/components/Mascot";
-import { backupOptions, conditions, eyebrows, heroActions, site, steps } from "@/content/site";
+import { backupOptions, conditions, eyebrows, heroActions, homeHeadings, site, steps } from "@/content/site";
 
 export default function HomePage() {
   return (
     <>
       <section className="panel">
         <p className="eyebrow">{eyebrows.hero}</p>
-        <h1>컴퓨터 없이,<br />USB에 아이폰 사진을 백업합니다.</h1>
+        <h1>
+          {homeHeadings.heroLines[0]}
+          <br />
+          {homeHeadings.heroLines[1]}
+        </h1>
         <p className="lead">{site.heroLead}</p>
         <div className="action-row">
           {heroActions.map((action) => (
@@ -29,7 +33,7 @@ export default function HomePage() {
       <div className="rail">
         <section className="rail-section" aria-labelledby="options-title">
           <p className="eyebrow">{eyebrows.options}</p>
-          <h2 id="options-title">백업 방식은 두 가지입니다</h2>
+          <h2 id="options-title">{homeHeadings.options}</h2>
           <dl className="options">
             {backupOptions.map((option) => (
               <div key={option.name}>
@@ -42,7 +46,7 @@ export default function HomePage() {
 
         <section id="steps" className="rail-section" aria-labelledby="steps-title">
           <p className="eyebrow">{eyebrows.steps}</p>
-          <h2 id="steps-title">사용 순서</h2>
+          <h2 id="steps-title">{homeHeadings.steps}</h2>
           <ol className="steps">
             {steps.map((step) => (
               <li key={step.title}>
@@ -55,7 +59,7 @@ export default function HomePage() {
 
         <section id="conditions" className="rail-section" aria-labelledby="conditions-title">
           <p className="eyebrow">{eyebrows.conditions}</p>
-          <h2 id="conditions-title">구매 전에 확인하세요</h2>
+          <h2 id="conditions-title">{homeHeadings.conditions}</h2>
           <p className="section-note">무료 체험이 없습니다. 아래 조건이 맞는지 먼저 확인하세요.</p>
           <dl className="conditions">
             {conditions.map((item) => (
