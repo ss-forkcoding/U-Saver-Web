@@ -33,6 +33,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html[data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   background: var(--color-white);
@@ -271,6 +277,81 @@ summary:focus-visible {
   display: block;
   width: 100%;
   height: auto;
+  overflow: visible;
+}
+
+.mascot-tilt {
+  transform-box: view-box;
+  transform-origin: 367px 365px;
+  transform: rotate(calc(var(--pose, 1) * -10.5deg));
+}
+
+.mascot-limb {
+  fill: none;
+  stroke: var(--color-midnight);
+  stroke-linecap: round;
+  stroke-width: 44;
+}
+
+.mascot-shade {
+  fill: var(--color-horizon);
+  transform-box: view-box;
+  transform-origin: 369px 0;
+  transform: scaleX(var(--pose, 1));
+}
+
+.mascot-plug {
+  fill: var(--color-white);
+  stroke: var(--color-midnight);
+  stroke-width: 18;
+}
+
+.mascot-holes {
+  fill: var(--color-midnight);
+  transform: translateX(calc(var(--pose, 1) * 9px));
+}
+
+.mascot-body {
+  fill: var(--color-horizon);
+}
+
+.mascot-outline .mascot-shade,
+.mascot-outline .mascot-body {
+  fill: var(--color-white);
+  stroke: var(--color-white);
+  stroke-width: 28;
+}
+
+.mascot-outline .mascot-plug {
+  stroke: var(--color-white);
+  stroke-width: 46;
+}
+
+.mascot-outline .mascot-limb {
+  stroke: var(--color-white);
+  stroke-width: 72;
+}
+
+.mascot-face {
+  transform: translateX(calc(var(--pose, 1) * 40px));
+}
+
+.mascot-feature {
+  fill: none;
+  stroke: var(--color-midnight);
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.mascot-eye {
+  stroke-width: 38;
+  transform: skewX(calc(var(--pose, 1) * 15deg));
+}
+
+.mascot-smile {
+  stroke-width: 18;
+  transform: rotate(calc(var(--pose, 1) * -6deg));
 }
 
 .rail {

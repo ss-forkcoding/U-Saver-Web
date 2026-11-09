@@ -19,7 +19,7 @@ export default function SupportPage() {
     <>
       <section className="panel panel-short">
         <div className="panel-mascot">
-          <Mascot sizes="112px" eager />
+          <Mascot />
         </div>
         <p className="eyebrow">{eyebrows.support}</p>
         <h1>{site.name} 지원</h1>

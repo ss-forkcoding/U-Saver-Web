@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className={hand.variable}>
+    <html lang="ko" className={hand.variable} data-scroll-behavior="smooth">
       <body>
         <header className="site-header wrap">
           <Link className="brand" href="/">

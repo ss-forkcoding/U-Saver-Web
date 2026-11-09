@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ConditionIcon } from "@/components/ConditionIcon";
 import { JsonLd } from "@/components/JsonLd";
-import { Mascot } from "@/components/Mascot";
+import { TrackingMascot } from "@/components/TrackingMascot";
 import { publisher, sitePreview } from "@/content/seo";
 import { backupOptions, conditions, eyebrows, heroActions, homeHeadings, site, steps } from "@/content/site";
 
@@ -47,7 +47,7 @@ export default function HomePage() {
           <p>{site.price}</p>
         </div>
         <div className="phone">
-          <Mascot sizes="(max-width: 640px) 168px, 224px" eager />
+          <TrackingMascot />
         </div>
       </section>
 

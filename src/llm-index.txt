@@ -3,7 +3,6 @@ ROLE: 웹 소스 · 라우트, 문구, 공용 그림
 
 ## dirs
 app/ → app/llm-index.txt
-assets/mascot.png — 3색으로 맞추고 흰 테두리를 입힌 USB 마스코트
 components/ → components/llm-index.txt
 content/ → content/llm-index.txt
 lib/ → lib/llm-index.txt
