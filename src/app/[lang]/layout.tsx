@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { default: siteCopy[lang].homeTitle, template: `%s | ${site.name}` },
     description: siteCopy[lang].description,
     twitter: { card: "summary_large_image", images: [ogImage.url] },
+    verification: { other: { "naver-site-verification": "0d401261669164e485d6087ec047c4842d6ec835" } },
   };
 }
 
