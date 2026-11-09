@@ -12,4 +12,6 @@ LanguageNav.tsx — 사이트 바닥글의 같은 페이지 언어 전환 링크
 Mascot.tsx — 부위별로 나뉜 USB 마스코트 SVG
 PostDate.tsx — 언어별 글 날짜 표시
 StepsShowcase.tsx — 가운데 아이폰 목업의 화면이 스크롤에 맞춰 바뀌는 사용법
+StoreButton.tsx — 클릭을 집계하는 App Store 링크 버튼
 TrackingMascot.tsx — 홈 히어로에서 커서 쪽으로 자세를 바꾸는 마스코트
+VisitTracker.tsx — 탭 세션당 방문 1회를 보내는 빈 컴포넌트

@@ -1,8 +1,10 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BrandLogo } from "@/components/BrandLogo";
 import { LanguageNav } from "@/components/LanguageNav";
+import { VisitTracker } from "@/components/VisitTracker";
 import { siteCopy } from "@/content/copy";
 import { blogPath, ogImage, sitePath, siteAuthors } from "@/content/seo";
 import { isLang, langs, site } from "@/content/site";
@@ -61,7 +63,9 @@ export default async function RootLayout({ children, params }: Props & Readonly<
           </Link>
           <LanguageNav lang={lang} label={nav.language} />
         </footer>
+        <VisitTracker />
       </body>
+      <GoogleAnalytics gaId={site.gaMeasurementId} />
     </html>
   );
 }

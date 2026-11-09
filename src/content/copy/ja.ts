@@ -19,6 +19,7 @@ export const ja = {
     heroLead: "動画と連絡先も保存でき、USBメモリの内容はアプリから写真アプリと連絡先に復元できます。",
     price: "韓国では5,000ウォン未満でずっと使えます",
     heroActions: [{ label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true }],
+    storeAction: "App Storeで入手",
     optionsEyebrow: "どちらか選ぶだけ",
     optionsTitle: "すべてバックアップしますか、写真のみにしますか?",
     options: [
@@ -169,7 +170,7 @@ export const ja = {
       {
         id: "collected",
         title: "当社が受け取る情報",
-        paragraphs: ["サイトには分析ツールや広告Cookieはありません。ご意見やメールに、マイナンバーなどの身分証番号、パスワード、健康情報を記載しないでください。"],
+        paragraphs: ["サイトでは訪問統計のためにGoogle Analyticsを使用します。広告用Cookieは使用しません。アプリは分析ツールを使用しません。これとは別に、サイトが直接数える訪問数とApp Storeボタンのクリック数は、個人を識別しない合計としてのみ数えます。訪問を二重に数えないための印は、ブラウザのタブにのみ保存されます。ご意見やメールに、マイナンバーなどの身分証番号、パスワード、健康情報を記載しないでください。"],
         records: [
           {
             name: "意見フォーム",
@@ -196,10 +197,18 @@ export const ja = {
             ],
           },
           {
+            name: "Google Analyticsの訪問統計",
+            rows: [
+              { label: "受け取る項目", value: "閲覧ページ、流入元、端末とブラウザの情報、おおよその地域、Cookieに保存されるランダムな訪問者識別値" },
+              { label: "利用目的", value: "訪問規模とよく読まれる記事を把握し、サイトを改善します。" },
+              { label: "保管期間", value: "統計は最長14か月保管します。Cookie(_ga、_ga_*)は最長2年間保持され、ブラウザからいつでも削除できます。" },
+            ],
+          },
+          {
             name: "繰り返し送信の防止",
             rows: [
-              { label: "受け取る項目", value: "意見フォームを送信したIPアドレス" },
-              { label: "利用目的", value: "10分間に5回を超える繰り返し送信を防ぎます。" },
+              { label: "受け取る項目", value: "意見フォームの送信時、または訪問やクリックを数えるときのIPアドレス" },
+              { label: "利用目的", value: "意見フォームは10分間に5回、訪問とクリックの集計は10分間に60回を超える繰り返し送信を防ぎます。" },
               { label: "保管期間", value: "サーバーのメモリに一時的に置きます。意見シートには保存しません。" },
             ],
           },
@@ -234,6 +243,15 @@ export const ja = {
               { label: "移転項目", value: "意見の種類、内容、受付日時、メールアドレス(任意)" },
               { label: "移転の時点", value: "意見の送信時にインターネットで送信します。" },
               { label: "事業者の方針", value: "Googleプライバシーポリシー", href: "https://policies.google.com/privacy" },
+            ],
+          },
+          {
+            name: "Google LLC(米国)· Google Analytics",
+            rows: [
+              { label: "委託業務", value: "サイトの訪問統計" },
+              { label: "移転項目", value: "閲覧ページ、流入元、端末とブラウザの情報、おおよその地域、Cookieの訪問者識別値" },
+              { label: "移転の時点", value: "サイトのページを開いたときにインターネットで送信します。" },
+              { label: "拒否の方法", value: "Google Analyticsオプトアウトアドオン", href: "https://tools.google.com/dlpage/gaoptout" },
             ],
           },
         ],

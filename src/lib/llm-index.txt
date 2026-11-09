@@ -1,8 +1,9 @@
 # src/lib
-ROLE: 로직 · 블로그 원고 읽기, 의견 접수, 마스코트 자세 계산
+ROLE: 로직 · 블로그 원고 읽기, 의견 접수, 방문·클릭 집계, 마스코트 자세 계산
 
 ## dirs
 feedback/ — core.ts 검증·한도 판단, rate-limit.ts IP별 한도, sheet.ts Apps Script 전송
+metrics/ — core.ts 방문·클릭 이벤트 계약과 봇 판정, client.ts 브라우저 전송, server.ts zenith 웹훅 증가
 
 ## files
 blog.ts — 마크다운 글 읽기와 번역 누락·frontmatter 검증

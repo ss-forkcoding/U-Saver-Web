@@ -19,6 +19,7 @@ export const en = {
     heroLead: "Save videos and contacts too, then restore them from the USB drive to Photos and Contacts in the app.",
     price: "Under 5,000 KRW in Korea, yours for life",
     heroActions: [{ label: "Check if it fits my iPhone", href: "#conditions", primary: true }],
+    storeAction: "Get it on the App Store",
     optionsEyebrow: "Pick one",
     optionsTitle: "Back up all, or photos only?",
     options: [
@@ -169,7 +170,7 @@ export const en = {
       {
         id: "collected",
         title: "Information we receive",
-        paragraphs: ["The site has no analytics tools or advertising cookies. Please do not include national ID numbers, passwords, or health information in feedback or email."],
+        paragraphs: ["The site uses Google Analytics for visit statistics. It does not use advertising cookies. The app does not use analytics tools. Separately, the site itself counts visits and App Store button clicks only as totals that do not identify anyone. The marker that keeps a visit from being counted twice stays in your browser tab. Please do not include national ID numbers, passwords, or health information in feedback or email."],
         records: [
           {
             name: "Feedback form",
@@ -196,10 +197,18 @@ export const en = {
             ],
           },
           {
+            name: "Google Analytics visit statistics",
+            rows: [
+              { label: "What we receive", value: "Pages viewed, referral source, device and browser information, approximate region, and a random visitor ID stored in a cookie" },
+              { label: "Why we use it", value: "To understand visit volume and popular articles so we can improve the site" },
+              { label: "Retention", value: "Statistics are kept for up to 14 months. Cookies (_ga, _ga_*) last up to 2 years, and you can delete them in your browser at any time." },
+            ],
+          },
+          {
             name: "Repeat submission prevention",
             rows: [
-              { label: "What we receive", value: "The IP address that submitted the feedback form" },
-              { label: "Why we use it", value: "To block more than 5 submissions in 10 minutes" },
+              { label: "What we receive", value: "The IP address used to submit the feedback form or when a visit or click is counted" },
+              { label: "Why we use it", value: "To block more than 5 feedback submissions, or more than 60 visit and click counts, in 10 minutes" },
               { label: "Retention", value: "Held briefly in server memory. It is not saved to the feedback sheet." },
             ],
           },
@@ -234,6 +243,15 @@ export const en = {
               { label: "Information transferred", value: "Feedback type, message, time received, and email address (optional)" },
               { label: "When", value: "Sent over the internet when you submit feedback." },
               { label: "Provider policy", value: "Google Privacy Policy", href: "https://policies.google.com/privacy" },
+            ],
+          },
+          {
+            name: "Google LLC (United States) · Google Analytics",
+            rows: [
+              { label: "Role", value: "Site visit statistics" },
+              { label: "Information transferred", value: "Pages viewed, referral source, device and browser information, approximate region, and the visitor ID in the cookie" },
+              { label: "When", value: "Sent over the internet when you open a page on the site." },
+              { label: "How to opt out", value: "Google Analytics Opt-out Add-on", href: "https://tools.google.com/dlpage/gaoptout" },
             ],
           },
         ],

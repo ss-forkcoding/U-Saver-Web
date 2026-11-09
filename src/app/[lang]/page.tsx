@@ -6,10 +6,11 @@ import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
 import { StepsShowcase } from "@/components/StepsShowcase";
+import { StoreButton } from "@/components/StoreButton";
 import { TrackingMascot } from "@/components/TrackingMascot";
 import { siteCopy } from "@/content/copy";
 import { faqJsonLd, publisher, siteAlternates, sitePath, sitePreview } from "@/content/seo";
-import { isLang, site, type Lang } from "@/content/site";
+import { appStoreUrl, isLang, site, type Lang } from "@/content/site";
 
 type Props = Readonly<{ params: Promise<{ lang: string }> }>;
 
@@ -62,11 +63,15 @@ export default async function HomePage({ params }: Props) {
         </h1>
         <p className="lead">{home.heroLead}</p>
         <div className="action-row">
-          {home.heroActions.map((action) => (
-            <a key={action.href} className={action.primary ? "pill pill-primary" : "pill"} href={action.href}>
-              {action.label}
-            </a>
-          ))}
+          {appStoreUrl ? (
+            <StoreButton href={appStoreUrl} label={home.storeAction} />
+          ) : (
+            home.heroActions.map((action) => (
+              <a key={action.href} className={action.primary ? "pill pill-primary" : "pill"} href={action.href}>
+                {action.label}
+              </a>
+            ))
+          )}
         </div>
         <div className="meta">
           <p>{home.price}</p>

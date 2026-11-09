@@ -4,6 +4,7 @@ ROLE: 웹 라우트 · App Router 페이지와 전역 스타일
 
 ## dirs
 [lang]/ → [lang]/llm-index.txt
+api/track/route.ts — 방문·클릭 수신, 봇·다른 출처 차단 뒤 zenith 지표 증가
 blog/ → blog/llm-index.txt
 
 ## files

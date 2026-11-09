@@ -1,5 +1,7 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { VisitTracker } from "@/components/VisitTracker";
 import { siteAuthors } from "@/content/seo";
 import { langs, isLang, site } from "@/content/site";
 import { hand } from "../../fonts";
@@ -29,7 +31,9 @@ export default async function BlogRootLayout({
         <footer className="site-footer rail">
           <p>{site.copyright}</p>
         </footer>
+        <VisitTracker />
       </body>
+      <GoogleAnalytics gaId={site.gaMeasurementId} />
     </html>
   );
 }

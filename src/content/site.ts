@@ -6,7 +6,11 @@ export const site = {
   supportEmail: "khan@nextgenai.kr",
   updatedOn: "2026-11-09",
   privacyEffectiveOn: "2026-11-09",
+  gaMeasurementId: "G-FPGBR792PD",
 } as const;
+
+// 앱이 공개되면 주소를 넣는다. 값이 있으면 홈 히어로 CTA가 클릭 집계되는 App Store 버튼으로 바뀐다.
+export const appStoreUrl: string | null = null;
 
 export type FaqSource = Readonly<{ label: string; href: string }>;
 export type FaqItem = Readonly<{ q: string; a: string; sources?: readonly FaqSource[] }>;

@@ -19,6 +19,7 @@ export const ko = {
     heroLead: "영상과 연락처도 저장할 수 있고, USB의 내용은 앱에서 사진 앱과 연락처로 복원합니다.",
     price: "5000원도 안되는 돈으로 평생 사용",
     heroActions: [{ label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true }],
+    storeAction: "App Store에서 받기",
     optionsEyebrow: "하나만 고르세요",
     optionsTitle: "모두 백업할까요, 사진만 백업할까요?",
     options: [
@@ -169,7 +170,7 @@ export const ko = {
       {
         id: "collected",
         title: "저희가 받는 정보",
-        paragraphs: ["사이트에는 분석 도구와 광고 쿠키가 없습니다. 의견과 이메일에 주민등록번호나 비밀번호, 건강 정보를 적지 말아 주세요."],
+        paragraphs: ["사이트는 방문 통계를 위해 Google Analytics를 씁니다. 광고용 쿠키는 쓰지 않습니다. 앱은 분석 도구를 쓰지 않습니다. 이와 별도로 사이트가 직접 세는 방문 수와 App Store 버튼 클릭 수는 개인을 구분하지 않는 합계로만 셉니다. 방문을 두 번 세지 않기 위한 표시는 브라우저 탭에만 저장됩니다. 의견과 이메일에 주민등록번호나 비밀번호, 건강 정보를 적지 말아 주세요."],
         records: [
           {
             name: "의견 양식",
@@ -196,10 +197,18 @@ export const ko = {
             ],
           },
           {
+            name: "Google Analytics 방문 통계",
+            rows: [
+              { label: "받는 항목", value: "본 페이지, 유입 경로, 기기와 브라우저 정보, 대략적인 지역, 쿠키에 저장된 임의의 방문자 식별값" },
+              { label: "쓰는 이유", value: "방문 규모와 많이 읽는 글을 파악해 사이트를 개선합니다." },
+              { label: "보관 기간", value: "통계는 최대 14개월 보관합니다. 쿠키(_ga, _ga_*)는 최대 2년 유지되며 브라우저에서 언제든 지울 수 있습니다." },
+            ],
+          },
+          {
             name: "반복 전송 방지",
             rows: [
-              { label: "받는 항목", value: "의견 양식을 보낸 IP 주소" },
-              { label: "쓰는 이유", value: "10분에 5회를 넘는 반복 전송을 막습니다." },
+              { label: "받는 항목", value: "의견 양식을 보내거나 방문·클릭 수가 집계될 때의 IP 주소" },
+              { label: "쓰는 이유", value: "의견 양식은 10분에 5회, 방문·클릭 집계는 10분에 60회를 넘는 반복 전송을 막습니다." },
               { label: "보관 기간", value: "서버 메모리에 잠시 둡니다. 의견 시트에는 저장하지 않습니다." },
             ],
           },
@@ -234,6 +243,15 @@ export const ko = {
               { label: "이전 항목", value: "의견 종류, 내용, 접수 시각, 이메일 주소(선택)" },
               { label: "이전 시점", value: "의견을 보낼 때 인터넷으로 전송합니다." },
               { label: "업체 방침", value: "Google 개인정보처리방침", href: "https://policies.google.com/privacy" },
+            ],
+          },
+          {
+            name: "Google LLC (미국) · Google Analytics",
+            rows: [
+              { label: "맡기는 일", value: "사이트 방문 통계" },
+              { label: "이전 항목", value: "본 페이지, 유입 경로, 기기와 브라우저 정보, 대략적인 지역, 쿠키의 방문자 식별값" },
+              { label: "이전 시점", value: "사이트 페이지를 열 때 인터넷으로 전송합니다." },
+              { label: "거부 방법", value: "Google Analytics 차단 부가기능", href: "https://tools.google.com/dlpage/gaoptout" },
             ],
           },
         ],
