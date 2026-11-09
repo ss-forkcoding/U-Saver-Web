@@ -69,7 +69,6 @@ export default async function HomePage({ params }: Props) {
           ))}
         </div>
         <div className="meta">
-          <p className="meta-strong">{home.releaseStatus}</p>
           <p>{home.price}</p>
         </div>
         <div className="phone">

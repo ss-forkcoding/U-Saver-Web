@@ -17,12 +17,8 @@ export const ja = {
     heroEyebrow: "写真は自分のUSBに",
     heroLines: ["iPhoneの写真を", "パソコンなしでUSBメモリに保存。"],
     heroLead: "動画と連絡先も保存でき、USBメモリの内容はアプリから写真アプリと連絡先に復元できます。",
-    releaseStatus: "App Storeでの公開を準備中",
-    price: "韓国での価格は4,900ウォンの買い切り",
-    heroActions: [
-      { label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true },
-      { label: "使い方の5ステップを見る", href: "#steps", primary: false },
-    ],
+    price: "韓国では5,000ウォン未満でずっと使えます",
+    heroActions: [{ label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true }],
     optionsEyebrow: "どちらか選ぶだけ",
     optionsTitle: "すべてバックアップしますか、写真のみにしますか?",
     options: [

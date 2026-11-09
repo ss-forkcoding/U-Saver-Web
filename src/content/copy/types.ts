@@ -41,7 +41,6 @@ export type SiteCopy = Readonly<{
     heroEyebrow: string;
     heroLines: readonly [string, string];
     heroLead: string;
-    releaseStatus: string;
     price: string;
     heroActions: readonly LabeledLink[];
     optionsEyebrow: string;

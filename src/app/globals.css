@@ -278,10 +278,6 @@ summary:focus-visible {
   font-size: var(--text-small);
 }
 
-.meta-strong {
-  font-weight: 600;
-}
-
 .panel .mascot {
   margin-inline: auto;
 }

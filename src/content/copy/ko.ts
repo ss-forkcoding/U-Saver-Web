@@ -17,12 +17,8 @@ export const ko = {
     heroEyebrow: "사진은 내 USB에",
     heroLines: ["아이폰 사진을", "컴퓨터 없이 USB에 저장하세요."],
     heroLead: "영상과 연락처도 저장할 수 있고, USB의 내용은 앱에서 사진 앱과 연락처로 복원합니다.",
-    releaseStatus: "App Store 출시 준비 중",
-    price: "₩4,900 한 번 결제",
-    heroActions: [
-      { label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true },
-      { label: "사용법 5단계 보기", href: "#steps", primary: false },
-    ],
+    price: "5000원도 안되는 돈으로 평생 사용",
+    heroActions: [{ label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true }],
     optionsEyebrow: "하나만 고르세요",
     optionsTitle: "모두 백업할까요, 사진만 백업할까요?",
     options: [

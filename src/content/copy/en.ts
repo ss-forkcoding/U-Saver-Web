@@ -17,12 +17,8 @@ export const en = {
     heroEyebrow: "Your photos, on your USB",
     heroLines: ["Save iPhone photos to USB.", "No computer needed."],
     heroLead: "Save videos and contacts too, then restore them from the USB drive to Photos and Contacts in the app.",
-    releaseStatus: "Preparing for App Store release",
-    price: "4,900 KRW one-time purchase in Korea",
-    heroActions: [
-      { label: "Check if it fits my iPhone", href: "#conditions", primary: true },
-      { label: "See the 5 steps", href: "#steps", primary: false },
-    ],
+    price: "Under 5,000 KRW in Korea, yours for life",
+    heroActions: [{ label: "Check if it fits my iPhone", href: "#conditions", primary: true }],
     optionsEyebrow: "Pick one",
     optionsTitle: "Back up all, or photos only?",
     options: [
