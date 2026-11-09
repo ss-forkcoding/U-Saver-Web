@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
-import { blogLanguages, blogPath } from "@/content/seo";
-import { blogLangs, site } from "@/content/site";
+import { blogLanguages, blogPath, siteLanguages, sitePath } from "@/content/seo";
+import { langs, site } from "@/content/site";
 import { getPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogEntries = blogLangs.flatMap((lang) => {
+  const blogEntries = langs.flatMap((lang) => {
     const posts = getPosts(lang);
     return [
       {
@@ -21,5 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  return [{ url: site.url }, { url: `${site.url}/support` }, { url: `${site.url}/privacy` }, ...blogEntries];
+  const siteEntries = ["", "/support", "/privacy"].flatMap((path) =>
+    langs.map((lang) => ({
+      url: `${site.url}${sitePath(lang, path)}`,
+      alternates: { languages: siteLanguages(path, site.url) },
+    })),
+  );
+
+  return [...siteEntries, ...blogEntries];
 }

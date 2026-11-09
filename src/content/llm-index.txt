@@ -1,9 +1,11 @@
 # src/content
-ROLE: 콘텐츠 · 사이트 문구와 블로그 원고
+ROLE: 콘텐츠 · ko·en·ja 사이트 문구와 블로그 원고
 
 ## dirs
 blog/<slug>/ — 글 하나당 ko.md, en.md, ja.md 세 파일
+copy/ — 언어별 페이지 문구 ko.ts·en.ts·ja.ts, index.ts siteCopy, types.ts 번역 누락을 막는 SiteCopy
 
 ## files
+langs.ts — 지원 언어와 영어 대체 규칙의 단일 출처
 seo.ts — 대체 링크, 링크 미리보기, 게시자 정보
-site.ts — 사이트·블로그 문구와 연락처, 조건 목록의 단일 출처
+site.ts — 언어와 무관한 사이트 값, 공용 타입, 블로그 문구

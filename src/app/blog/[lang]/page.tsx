@@ -5,14 +5,14 @@ import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
 import { blogLanguages, blogPath, blogPreview, faqJsonLd, publisher } from "@/content/seo";
-import { blogCopy, isBlogLang, site } from "@/content/site";
+import { blogCopy, isLang, site } from "@/content/site";
 import { getPosts } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string }> }>;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  if (!isBlogLang(lang)) return {};
+  if (!isLang(lang)) return {};
   return {
     title: `${blogCopy[lang].title} | ${site.name}`,
     description: blogCopy[lang].description,
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogListPage({ params }: Props) {
   const { lang } = await params;
-  if (!isBlogLang(lang)) notFound();
+  if (!isLang(lang)) notFound();
   const copy = blogCopy[lang];
   const posts = getPosts(lang);
 

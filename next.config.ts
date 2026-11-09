@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
         destination: `${site.url}/:path*`,
         permanent: true,
       },
-      { source: "/blog", destination: "/blog/ko", permanent: false },
     ];
   },
 };

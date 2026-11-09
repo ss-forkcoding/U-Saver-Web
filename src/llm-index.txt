@@ -6,3 +6,6 @@ app/ → app/llm-index.txt
 components/ → components/llm-index.txt
 content/ → content/llm-index.txt
 lib/ → lib/llm-index.txt
+
+## files
+proxy.ts — 언어 없는 주소를 브라우저 언어 경로로 보낸다

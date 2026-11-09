@@ -802,7 +802,8 @@ button.pill:disabled {
   cursor: progress;
 }
 
-.site-header nav {
+.site-header nav,
+.language-nav {
   display: flex;
   gap: var(--gap-2);
 }

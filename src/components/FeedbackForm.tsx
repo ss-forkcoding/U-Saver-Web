@@ -1,8 +1,9 @@
 "use client";
 
 import { useActionState } from "react";
-import { submitFeedback } from "@/app/(site)/support/actions";
-import { feedbackCategories, feedbackCopy, feedbackLimits } from "@/content/site";
+import { submitFeedback } from "@/app/[lang]/support/actions";
+import type { FeedbackCopy } from "@/content/copy/types";
+import { feedbackCategoryValues, feedbackLimits } from "@/content/site";
 import type { FeedbackErrors, FeedbackState, FeedbackValues } from "@/lib/feedback/core";
 
 const initialState: FeedbackState = { status: "idle", attempt: 0 };
@@ -12,24 +13,24 @@ function describedBy(...ids: ReadonlyArray<string | false>): string | undefined 
   return ids.filter(Boolean).join(" ") || undefined;
 }
 
-function alertText(state: FeedbackState): string | undefined {
+function alertText(state: FeedbackState, feedbackCopy: FeedbackCopy): string | undefined {
   if (state.status === "invalid") return feedbackCopy.invalidSummary;
   if (state.status === "rate_limited") return feedbackCopy.rateLimited;
   if (state.status === "unavailable") return feedbackCopy.unavailable;
   return undefined;
 }
 
-export function FeedbackForm() {
+export function FeedbackForm({ copy }: Readonly<{ copy: FeedbackCopy }>) {
   const [state, formAction, pending] = useActionState(submitFeedback, initialState);
   const values = "values" in state ? state.values : emptyValues;
   const errors: FeedbackErrors = state.status === "invalid" ? state.errors : {};
-  const alert = alertText(state);
+  const alert = alertText(state, copy);
 
   return (
     // 시도마다 다시 그려 서버가 돌려준 입력값을 복원한다.
     <form key={state.attempt} className="feedback-form" action={formAction} noValidate>
       <div className="field">
-        <label htmlFor="feedback-category">{feedbackCopy.categoryLabel}</label>
+        <label htmlFor="feedback-category">{copy.categoryLabel}</label>
         <select
           id="feedback-category"
           name="category"
@@ -40,23 +41,23 @@ export function FeedbackForm() {
           aria-describedby={describedBy(Boolean(errors.category) && "feedback-category-error")}
         >
           <option value="" disabled>
-            {feedbackCopy.categoryPlaceholder}
+            {copy.categoryPlaceholder}
           </option>
-          {feedbackCategories.map((category) => (
-            <option key={category.value} value={category.value}>
-              {category.label}
+          {feedbackCategoryValues.map((value) => (
+            <option key={value} value={value}>
+              {copy.categories[value]}
             </option>
           ))}
         </select>
         {errors.category && (
           <p id="feedback-category-error" className="field-error">
-            {errors.category}
+            {copy.errors[errors.category]}
           </p>
         )}
       </div>
 
       <div className="field">
-        <label htmlFor="feedback-message">{feedbackCopy.messageLabel}</label>
+        <label htmlFor="feedback-message">{copy.messageLabel}</label>
         <textarea
           id="feedback-message"
           name="message"
@@ -70,17 +71,17 @@ export function FeedbackForm() {
           aria-describedby={describedBy("feedback-message-help", Boolean(errors.message) && "feedback-message-error")}
         />
         <p id="feedback-message-help" className="field-help">
-          {feedbackCopy.messageHelp}
+          {copy.messageHelp}
         </p>
         {errors.message && (
           <p id="feedback-message-error" className="field-error">
-            {errors.message}
+            {copy.errors[errors.message]}
           </p>
         )}
       </div>
 
       <div className="field">
-        <label htmlFor="feedback-email">{feedbackCopy.emailLabel}</label>
+        <label htmlFor="feedback-email">{copy.emailLabel}</label>
         <input
           id="feedback-email"
           name="email"
@@ -93,17 +94,17 @@ export function FeedbackForm() {
           aria-describedby={describedBy("feedback-email-help", Boolean(errors.email) && "feedback-email-error")}
         />
         <p id="feedback-email-help" className="field-help">
-          {feedbackCopy.emailHelp}
+          {copy.emailHelp}
         </p>
         {errors.email && (
           <p id="feedback-email-error" className="field-error">
-            {errors.email}
+            {copy.errors[errors.email]}
           </p>
         )}
       </div>
 
       <div className="field-trap" aria-hidden="true">
-        <label htmlFor="feedback-website">웹사이트</label>
+        <label htmlFor="feedback-website">Website</label>
         <input id="feedback-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
@@ -114,12 +115,12 @@ export function FeedbackForm() {
       )}
       {state.status === "success" && (
         <p className="form-message" role="status">
-          {feedbackCopy.success}
+          {copy.success}
         </p>
       )}
 
       <button className="pill pill-primary" type="submit" disabled={pending}>
-        {pending ? feedbackCopy.pending : feedbackCopy.submit}
+        {pending ? copy.pending : copy.submit}
       </button>
     </form>
   );

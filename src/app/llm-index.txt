@@ -1,9 +1,9 @@
 # src/app
 ROLE: 웹 라우트 · App Router 페이지와 전역 스타일
-언어별 html lang 때문에 (site)와 blog/[lang]이 각각 루트 레이아웃을 갖는다.
+언어별 html lang 때문에 [lang]과 blog/[lang]이 각각 루트 레이아웃을 갖는다.
 
 ## dirs
-(site)/ → (site)/llm-index.txt
+[lang]/ → [lang]/llm-index.txt
 blog/ → blog/llm-index.txt
 
 ## files

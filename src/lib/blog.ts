@@ -1,11 +1,11 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
-import { blogLangs, type BlogLang } from "@/content/site";
+import { langs, type Lang } from "@/content/site";
 
 export type Post = Readonly<{
   slug: string;
-  lang: BlogLang;
+  lang: Lang;
   title: string;
   description: string;
   date: string;
@@ -32,7 +32,7 @@ function requireDate(data: Record<string, unknown>, file: string): string {
   return date.toISOString().slice(0, 10);
 }
 
-function readPost(slug: string, lang: BlogLang): Post {
+function readPost(slug: string, lang: Lang): Post {
   const file = `${slug}/${lang}.md`;
   const { data, content } = matter(readFileSync(join(postsRoot, file), "utf8"));
   const body = content.trim();
@@ -50,9 +50,9 @@ function readPost(slug: string, lang: BlogLang): Post {
 function readSlug(slug: string): readonly Post[] {
   if (!slugPattern.test(slug)) throw new Error(`${slug}: 폴더 이름은 영문 소문자, 숫자, 하이픈만 씁니다.`);
   const files = new Set(readdirSync(join(postsRoot, slug)));
-  const missing = blogLangs.filter((lang) => !files.has(`${lang}.md`));
+  const missing = langs.filter((lang) => !files.has(`${lang}.md`));
   if (missing.length > 0) throw new Error(`${slug}: 번역 파일이 없습니다 (${missing.join(", ")}).`);
-  return blogLangs.map((lang) => readPost(slug, lang));
+  return langs.map((lang) => readPost(slug, lang));
 }
 
 function readAllPosts(): readonly Post[] {
@@ -70,16 +70,16 @@ function allPosts(): readonly Post[] {
   return cachedPosts;
 }
 
-export function getPosts(lang: BlogLang): readonly Post[] {
+export function getPosts(lang: Lang): readonly Post[] {
   return allPosts().filter((post) => post.lang === lang);
 }
 
-export function getPost(lang: BlogLang, slug: string): Post | undefined {
+export function getPost(lang: Lang, slug: string): Post | undefined {
   return allPosts().find((post) => post.lang === lang && post.slug === slug);
 }
 
 export function getSlugs(): readonly string[] {
-  return getPosts(blogLangs[0]).map((post) => post.slug);
+  return getPosts(langs[0]).map((post) => post.slug);
 }
 
 function plainText(markdown: string): string {

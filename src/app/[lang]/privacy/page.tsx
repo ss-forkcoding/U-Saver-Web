@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Mascot } from "@/components/Mascot";
 import { PostDate } from "@/components/PostDate";
-import { sitePreview } from "@/content/seo";
-import { eyebrows, privacyPolicy, site, type PolicyRecord, type PolicySection } from "@/content/site";
+import { siteCopy } from "@/content/copy";
+import { siteAlternates, sitePreview } from "@/content/seo";
+import { isLang, site, type PolicyRecord, type PolicySection } from "@/content/site";
 
-export const metadata: Metadata = {
-  title: privacyPolicy.title,
-  description: privacyPolicy.description,
-  alternates: { canonical: "/privacy" },
-  ...sitePreview("/privacy", {
-    title: `${site.name} ${privacyPolicy.title}`,
-    description: privacyPolicy.description,
-  }),
-};
+type Props = Readonly<{ params: Promise<{ lang: string }> }>;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLang(lang)) return {};
+  const { privacy } = siteCopy[lang];
+  return {
+    title: privacy.title,
+    description: privacy.description,
+    alternates: siteAlternates(lang, "/privacy"),
+    ...sitePreview(lang, "/privacy", { title: `${site.name} ${privacy.title}`, description: privacy.description }),
+  };
+}
 
 function Record({ record }: Readonly<{ record: PolicyRecord }>) {
   return (
@@ -60,25 +66,29 @@ function Records({ records }: Readonly<{ records: readonly PolicyRecord[] }>) {
   );
 }
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: Props) {
+  const { lang } = await params;
+  if (!isLang(lang)) notFound();
+  const { privacy } = siteCopy[lang];
+
   return (
     <>
       <section className="panel panel-short">
         <div className="panel-mascot">
           <Mascot />
         </div>
-        <p className="eyebrow">{eyebrows.privacy}</p>
-        <h1>{privacyPolicy.title}</h1>
-        <p className="lead">{privacyPolicy.lead}</p>
+        <p className="eyebrow">{privacy.eyebrow}</p>
+        <h1>{privacy.title}</h1>
+        <p className="lead">{privacy.lead}</p>
         <div className="meta">
           <p>
-            시행일 <PostDate date={privacyPolicy.effectiveOn} lang="ko" />
+            {privacy.effectiveLabel} <PostDate date={site.privacyEffectiveOn} lang={lang} />
           </p>
         </div>
       </section>
 
       <div className="rail">
-        {privacyPolicy.sections.map((section) => (
+        {privacy.sections.map((section) => (
           <Section key={section.id} section={section} />
         ))}
       </div>

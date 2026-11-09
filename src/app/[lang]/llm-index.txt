@@ -1,0 +1,10 @@
+# src/app/[lang]
+ROLE: 웹 라우트 · ko·en·ja 마케팅, 지원, 개인정보 처리방침 페이지
+
+## dirs
+privacy/ — page.tsx 개인정보 처리방침 URL 페이지, 문구는 src/content/copy 의 privacy
+support/ — page.tsx 지원 URL 페이지, actions.ts 의견 접수 서버 액션
+
+## files
+layout.tsx — 사이트 루트 레이아웃, 공통 머리글·바닥글
+page.tsx — 마케팅 URL 페이지

@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
-import type { conditions } from "@/content/site";
+import type { ConditionIconName } from "@/content/site";
 
-type IconName = (typeof conditions)[number]["icon"];
-
-const paths: Record<IconName, ReactNode> = {
+const paths: Record<ConditionIconName, ReactNode> = {
   phone: (
     <>
       <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
@@ -34,7 +32,7 @@ const paths: Record<IconName, ReactNode> = {
 };
 
 // 조건 목록의 선 아이콘. 옆 이름이 뜻을 전달하므로 보조 기술에서 숨긴다.
-export function ConditionIcon({ name }: Readonly<{ name: IconName }>) {
+export function ConditionIcon({ name }: Readonly<{ name: ConditionIconName }>) {
   return (
     <svg
       className="condition-icon"

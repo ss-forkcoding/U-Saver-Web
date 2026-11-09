@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## U-Saver Web
 
-App Store 마케팅 URL(`/`)과 지원 URL(`/support`), 개인정보 처리방침 URL(`/privacy`), 다국어 정적 블로그(`/blog/ko`, `/blog/en`, `/blog/ja`)를 제공한다. 문구는 `src/content/site.ts`, 디자인 규칙은 `DESIGN.md`를 따른다. 런타임은 `bun`을 쓰고, 구조를 바꾸면 해당 `llm-index.txt`를 같은 변경에서 갱신한다.
+App Store 마케팅 URL(`/`)과 지원 URL(`/support`), 개인정보 처리방침 URL(`/privacy`), 다국어 정적 블로그(`/blog/ko`, `/blog/en`, `/blog/ja`)를 제공한다. 페이지는 `/ko`, `/en`, `/ja` 아래에 있고 `src/proxy.ts`가 언어 없는 주소를 브라우저 기본 언어로 보낸다. 지원하지 않는 언어는 영어로 보낸다. 문구는 `src/content/copy/`, 디자인 규칙은 `DESIGN.md`를 따른다. 런타임은 `bun`을 쓰고, 구조를 바꾸면 해당 `llm-index.txt`를 같은 변경에서 갱신한다.
 
 ### 블로그 글 추가
 

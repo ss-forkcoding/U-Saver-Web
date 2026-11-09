@@ -6,7 +6,7 @@ import { BlogHeader } from "@/components/BlogHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
 import { blogLanguages, blogPath, blogPreview, faqJsonLd, ogImage, publisher } from "@/content/seo";
-import { blogCopy, isBlogLang, site } from "@/content/site";
+import { blogCopy, isLang, site } from "@/content/site";
 import { extractFaqs, getPost, getSlugs, type Post } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string; slug: string }> }>;
@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
-  const post = isBlogLang(lang) ? getPost(lang, slug) : undefined;
+  const post = isLang(lang) ? getPost(lang, slug) : undefined;
   if (!post) return {};
   return {
     title: `${post.title} | ${site.name}`,
@@ -69,7 +69,7 @@ function postJsonLd(post: Post) {
 
 export default async function BlogPostPage({ params }: Props) {
   const { lang, slug } = await params;
-  const post = isBlogLang(lang) ? getPost(lang, slug) : undefined;
+  const post = isLang(lang) ? getPost(lang, slug) : undefined;
   if (!post) notFound();
 
   return (

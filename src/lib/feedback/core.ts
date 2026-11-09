@@ -1,9 +1,9 @@
-import { feedbackCategories, feedbackCopy, feedbackLimits } from "@/content/site";
+import { feedbackCategoryValues, feedbackLimits, type FeedbackCategory, type FeedbackErrorCode } from "@/content/site";
 
-export type FeedbackCategory = (typeof feedbackCategories)[number]["value"];
 export type FeedbackField = "category" | "message" | "email";
 export type FeedbackValues = Readonly<Record<FeedbackField, string>>;
-export type FeedbackErrors = Readonly<Partial<Record<FeedbackField, string>>>;
+// 서버는 언어와 무관한 코드만 돌려주고, 폼이 현재 언어의 문구로 바꾼다.
+export type FeedbackErrors = Readonly<Partial<Record<FeedbackField, FeedbackErrorCode>>>;
 export type FeedbackCommand = Readonly<{ category: FeedbackCategory; message: string; email: string }>;
 
 export type FeedbackState = Readonly<
@@ -19,19 +19,19 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const controlCharacters = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g;
 
 function isCategory(value: string): value is FeedbackCategory {
-  return feedbackCategories.some((category) => category.value === value);
+  return (feedbackCategoryValues as readonly string[]).includes(value);
 }
 
 export function parseFeedback(values: FeedbackValues): ParseResult {
   const message = values.message.replace(controlCharacters, "").trim();
   const email = values.email.trim();
-  const errors: Partial<Record<FeedbackField, string>> = {};
+  const errors: Partial<Record<FeedbackField, FeedbackErrorCode>> = {};
 
-  if (!isCategory(values.category)) errors.category = feedbackCopy.errors.category;
-  if (message.length < feedbackLimits.messageMin) errors.message = feedbackCopy.errors.messageShort;
-  if (message.length > feedbackLimits.messageMax) errors.message = feedbackCopy.errors.messageLong;
+  if (!isCategory(values.category)) errors.category = "category";
+  if (message.length < feedbackLimits.messageMin) errors.message = "messageShort";
+  if (message.length > feedbackLimits.messageMax) errors.message = "messageLong";
   if (email !== "" && (email.length > feedbackLimits.emailMax || !emailPattern.test(email))) {
-    errors.email = feedbackCopy.errors.email;
+    errors.email = "email";
   }
 
   if (!isCategory(values.category) || Object.keys(errors).length > 0) return { ok: false, errors };
