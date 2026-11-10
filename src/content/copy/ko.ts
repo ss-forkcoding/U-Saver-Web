@@ -8,7 +8,7 @@ const feedbackRetention = "접수일부터 1년 동안 보관하고 삭제합니
 
 // "전체 백업" 표현은 쓰지 않는다. 개인정보 문구는 앱의 실제 동작과 맞추고, 수집 항목이 바뀌면 세 언어와 시행일을 함께 고친다.
 export const ko = {
-  description: "컴퓨터 없이 일반 USB로 아이폰 사진·영상·연락처를 백업하고 복원하는 앱입니다.",
+  description: "컴퓨터 없이 일반 USB로 아이폰 사진·영상·연락처를 백업하는 앱입니다.",
   homeTitle: `${site.name} | 컴퓨터 없이 USB로 아이폰 백업`,
   nav: { blog: "블로그", support: "지원", privacy: "개인정보 처리방침", language: "언어 선택" },
   updatedLabel: "마지막 수정",
@@ -16,7 +16,7 @@ export const ko = {
   home: {
     heroEyebrow: "사진은 내 USB에",
     heroLines: ["아이폰 사진을", "컴퓨터 없이 USB에 저장하세요."],
-    heroLead: "영상과 연락처도 저장할 수 있고, USB의 내용은 앱에서 사진 앱과 연락처로 복원합니다.",
+    heroLead: "영상과 연락처도 저장할 수 있고, 원본은 아이폰에 그대로 남습니다.",
     price: "5000원도 안되는 돈으로 평생 사용",
     heroActions: [{ label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true }],
     storeAction: "App Store에서 받기",
@@ -49,7 +49,7 @@ export const ko = {
     faqEyebrow: "먼저 확인해 보세요",
     faqTitle: "자주 묻는 질문",
     faqs: [
-      { q: "U-Saver는 어떤 앱인가요?", a: "U-Saver는 컴퓨터 없이 일반 USB에 아이폰의 사진, 영상, 연락처를 저장하는 iOS 앱입니다. USB에 저장한 내용은 앱에서 사진 앱과 연락처로 복원합니다." },
+      { q: "U-Saver는 어떤 앱인가요?", a: "U-Saver는 컴퓨터 없이 일반 USB에 아이폰의 사진, 영상, 연락처를 저장하는 iOS 앱입니다. USB의 백업을 아이폰으로 되돌리는 기능은 아직 앱에 없습니다." },
       {
         q: "컴퓨터 없이 아이폰 사진을 USB에 백업할 수 있나요?",
         a: "네. USB를 아이폰에 꽂고 앱에서 원을 꾹 누르면 백업이 시작됩니다. Apple 안내에 따르면 아이폰은 외장 저장장치를 직접 연결해 파일을 옮길 수 있습니다.",

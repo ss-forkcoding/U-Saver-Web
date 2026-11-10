@@ -8,7 +8,7 @@ const feedbackRetention = "Kept for 1 year from the date received, then deleted.
 
 // 앱 안의 메뉴 이름은 u-saver 의 Localizable.xcstrings 영어 값과 맞춘다.
 export const en = {
-  description: "Back up and restore iPhone photos, videos, and contacts on a regular USB drive, with no computer.",
+  description: "Back up iPhone photos, videos, and contacts to a regular USB drive, with no computer.",
   homeTitle: `${site.name} | Back up iPhone to USB without a computer`,
   nav: { blog: "Blog", support: "Support", privacy: "Privacy Policy", language: "Choose language" },
   updatedLabel: "Last updated",
@@ -16,7 +16,7 @@ export const en = {
   home: {
     heroEyebrow: "Your photos, on your USB",
     heroLines: ["Save iPhone photos to USB.", "No computer needed."],
-    heroLead: "Save videos and contacts too, then restore them from the USB drive to Photos and Contacts in the app.",
+    heroLead: "Save videos and contacts too. The originals stay on your iPhone.",
     price: "Under 5,000 KRW in Korea, yours for life",
     heroActions: [{ label: "Check if it fits my iPhone", href: "#conditions", primary: true }],
     storeAction: "Get it on the App Store",
@@ -49,7 +49,7 @@ export const en = {
     faqEyebrow: "Quick answers",
     faqTitle: "Frequently asked questions",
     faqs: [
-      { q: "What is U-Saver?", a: "U-Saver is an iOS app that saves iPhone photos, videos, and contacts to a regular USB drive with no computer. The app restores what you saved to Photos and Contacts." },
+      { q: "What is U-Saver?", a: "U-Saver is an iOS app that saves iPhone photos, videos, and contacts to a regular USB drive with no computer. U-Saver doesn't yet restore backups from USB to your iPhone." },
       {
         q: "Can I back up iPhone photos to USB without a computer?",
         a: "Yes. Plug the USB drive into your iPhone and press and hold the circle in the app to start. According to Apple, iPhone can connect directly to external storage and move files.",

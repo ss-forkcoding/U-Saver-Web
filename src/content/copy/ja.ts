@@ -8,7 +8,7 @@ const feedbackRetention = "受付日から1年間保管し、その後削除し�
 
 // アプリ内のメニュー名は u-saver の Localizable.xcstrings の日本語値に合わせる。
 export const ja = {
-  description: "パソコンなしで一般的なUSBメモリにiPhoneの写真、動画、連絡先をバックアップし、復元できるアプリです。",
+  description: "パソコンなしで一般的なUSBメモリにiPhoneの写真、動画、連絡先をバックアップできるアプリです。",
   homeTitle: `${site.name} | パソコンなしでiPhoneをUSBメモリにバックアップ`,
   nav: { blog: "ブログ", support: "サポート", privacy: "プライバシーポリシー", language: "言語を選択" },
   updatedLabel: "最終更新",
@@ -16,7 +16,7 @@ export const ja = {
   home: {
     heroEyebrow: "写真は自分のUSBに",
     heroLines: ["iPhoneの写真を", "パソコンなしでUSBメモリに保存。"],
-    heroLead: "動画と連絡先も保存でき、USBメモリの内容はアプリから写真アプリと連絡先に復元できます。",
+    heroLead: "動画と連絡先も保存でき、元のデータはiPhoneにそのまま残ります。",
     price: "韓国では5,000ウォン未満でずっと使えます",
     heroActions: [{ label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true }],
     storeAction: "App Storeで入手",
@@ -49,7 +49,7 @@ export const ja = {
     faqEyebrow: "まずはこちらを",
     faqTitle: "よくある質問",
     faqs: [
-      { q: "U-Saverはどんなアプリですか?", a: "U-Saverは、パソコンなしで一般的なUSBメモリにiPhoneの写真、動画、連絡先を保存するiOSアプリです。USBメモリに保存した内容は、アプリから写真アプリと連絡先に復元できます。" },
+      { q: "U-Saverはどんなアプリですか?", a: "U-Saverは、パソコンなしで一般的なUSBメモリにiPhoneの写真、動画、連絡先を保存するiOSアプリです。USBメモリのバックアップをiPhoneに戻す機能は、まだアプリにありません。" },
       {
         q: "パソコンなしでiPhoneの写真をUSBメモリにバックアップできますか?",
         a: "はい。USBメモリをiPhoneに挿し、アプリの円を長押しするとバックアップが始まります。Appleの案内によると、iPhoneは外部ストレージを直接接続してファイルを移動できます。",
