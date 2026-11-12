@@ -56,7 +56,7 @@ export const en = {
         sources: [externalStorageLink],
       },
       { q: "Which USB drives can I use?", a: "You can use USB drives formatted as exFAT or FAT32. To save videos larger than 4GB, choose exFAT. Apple lists both as supported formats for external storage on iPhone." },
-      { q: "How much does U-Saver cost?", a: "In Korea, U-Saver is a one-time purchase of 4,900 KRW. The app is currently being prepared for the App Store." },
+      { q: "How much does U-Saver cost?", a: "In Korea, U-Saver is a one-time purchase of 4,900 KRW. The app is available on the App Store." },
       { q: "What happens if the USB drive comes out during a backup?", a: "The app shows a warning and waits 10 seconds. Plug the drive back in during that time. You can resume a stopped backup from Backup history in the app." },
       {
         q: "How is it different from iCloud backup?",

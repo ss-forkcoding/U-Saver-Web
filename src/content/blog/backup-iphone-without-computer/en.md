@@ -65,7 +65,7 @@ If you want messages and settings back after losing your iPhone, keep iCloud Bac
 
 Saving to USB with the built-in apps means moving from app to app for each type of item. It's more work when you're looking after someone else's iPhone, such as a parent's.
 
-U-Saver, made by NextGenAI, is an app that backs up photos, videos, and contacts to USB with no computer needed. Plug in a drive, choose to back up everything or photos only, and press and hold the circle to begin. Results are kept in the app's history. U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. If the drive is unplugged, the app waits 10 seconds. There are 2 backup modes: everything or photos only.
+U-Saver, made by NextGenAI, is an app that backs up photos, videos, and contacts to USB with no computer needed. Plug in a drive, choose to back up everything or photos only, and press and hold the circle to begin. Results are kept in the app's history. U-Saver is available on the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. If the drive is unplugged, the app waits 10 seconds. There are 2 backup modes: everything or photos only.
 
 It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Check the conditions in [Six things to check before using U-Saver](/blog/en/before-you-buy) before you buy.
 

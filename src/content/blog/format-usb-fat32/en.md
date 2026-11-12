@@ -110,7 +110,7 @@ Connect the drive and look under Locations on the Browse screen in the Files app
 
 ## Can you use a FAT32 USB drive with U-Saver?
 
-U-Saver, made by NextGenAI, is an app that saves photos, videos, and contacts to a regular USB drive, and it works with exFAT or FAT32 drives. Videos that don't fit on a FAT32 drive are marked as exceptions in the history, so format the drive as exFAT to save videos over 4 GB. U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. U-Saver doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Before you buy, read [Six things to check before using U-Saver](/blog/en/before-you-buy).
+U-Saver, made by NextGenAI, is an app that saves photos, videos, and contacts to a regular USB drive, and it works with exFAT or FAT32 drives. Videos that don't fit on a FAT32 drive are marked as exceptions in the history, so format the drive as exFAT to save videos over 4 GB. U-Saver is available on the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. U-Saver doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Before you buy, read [Six things to check before using U-Saver](/blog/en/before-you-buy).
 
 ## FAQ: USB 64GB format FAT32
 

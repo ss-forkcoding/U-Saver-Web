@@ -91,7 +91,7 @@ If the name doesn't appear, the drive may need more power or a different adapter
 
 U-Saver, made by NextGenAI, is an app that saves photos, videos, and contacts to a regular USB drive. The drive must be exFAT or FAT32. APFS and NTFS drives don't work. To save videos over 4 GB, format the drive as exFAT.
 
-U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. It doesn't save messages, app data, or iPhone settings. The contents of the drive aren't encrypted, so keep it somewhere safe. Before you buy, read [Six things to check before using U-Saver](/blog/en/before-you-buy).
+U-Saver is available on the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. It doesn't save messages, app data, or iPhone settings. The contents of the drive aren't encrypted, so keep it somewhere safe. Before you buy, read [Six things to check before using U-Saver](/blog/en/before-you-buy).
 
 ## FAQ: format USB to exFAT
 

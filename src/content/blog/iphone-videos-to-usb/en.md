@@ -79,7 +79,7 @@ With the Photos app, you select videos and choose a location every time. With ma
 
 U-Saver, made by NextGenAI, is an app that saves photos, videos, and contacts to a USB drive when you choose to back up everything. The photos-only mode skips regular videos. Interrupted backups continue from the app's history. A video too large for a FAT32 drive is marked as an exception in that history.
 
-U-Saver is being prepared for the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. Keep the app open while it backs up. It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Check whether it fits your setup in [Six things to check before using U-Saver](/blog/en/before-you-buy).
+U-Saver is available on the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. Keep the app open while it backs up. It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Check whether it fits your setup in [Six things to check before using U-Saver](/blog/en/before-you-buy).
 
 To move your photos as well, continue with [how to transfer photos from iPhone to USB](/blog/en/iphone-photos-to-usb). To find out whether you need an adapter, see [iPhone OTG USB connection requirements](/blog/en/iphone-otg-usb).
 

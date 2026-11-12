@@ -73,7 +73,7 @@ USB-CのiPhoneで電源がさらに必要なときは、Appleの案内どおり�
 
 NextGenAIが作ったU-Saverは、一般的なUSBメモリに写真、ビデオ、連絡先を保存するアプリです。LightningのiPhoneにはUSBアダプタが必要で、USBメモリの種類によっては外部電源が必要になることがあります。USBメモリの形式はexFATかFAT32にしてください。
 
-U-SaverはApp Storeでの公開を準備しており、iOS 26以降で使います。韓国での価格は4,900ウォンの買い切りです。メッセージ、アプリのデータ、iPhoneの設定は保存せず、USBメモリの内容は暗号化されません。購入前に[U-Saverを使う前に確認したい6つのこと](/blog/ja/before-you-buy)をご確認ください。
+U-SaverはApp Storeで入手でき、iOS 26以降で使います。韓国での価格は4,900ウォンの買い切りです。メッセージ、アプリのデータ、iPhoneの設定は保存せず、USBメモリの内容は暗号化されません。購入前に[U-Saverを使う前に確認したい6つのこと](/blog/ja/before-you-buy)をご確認ください。
 
 ## iPhoneのOTGとUSBメモリのよくある質問
 

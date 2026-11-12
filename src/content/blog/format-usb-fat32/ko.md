@@ -110,7 +110,7 @@ USB를 아이폰에 연결하고 파일 앱의 둘러보기 화면에서 위치 
 
 ## U-Saver에는 FAT32 USB를 써도 되나요?
 
-NextGenAI가 만든 U-Saver는 일반 USB에 사진, 영상, 연락처를 저장하는 앱이며 exFAT이나 FAT32 USB를 쓸 수 있습니다. FAT32 USB에 들어가지 않는 영상은 기록에 예외로 표시되므로 4GB가 넘는 영상까지 저장하려면 exFAT으로 포맷하세요. U-Saver는 App Store 출시를 준비하고 있으며 iOS 26 이상에서 씁니다. 가격은 4,900원이고 한 번 결제합니다. U-Saver는 메시지, 앱 데이터, 아이폰 설정을 저장하지 않고 USB의 내용은 암호화되지 않습니다. 구매 전에 [U-Saver를 쓰기 전에 확인할 여섯 가지](/blog/ko/before-you-buy)를 확인하세요.
+NextGenAI가 만든 U-Saver는 일반 USB에 사진, 영상, 연락처를 저장하는 앱이며 exFAT이나 FAT32 USB를 쓸 수 있습니다. FAT32 USB에 들어가지 않는 영상은 기록에 예외로 표시되므로 4GB가 넘는 영상까지 저장하려면 exFAT으로 포맷하세요. U-Saver는 App Store에서 받을 수 있으며 iOS 26 이상에서 씁니다. 가격은 4,900원이고 한 번 결제합니다. U-Saver는 메시지, 앱 데이터, 아이폰 설정을 저장하지 않고 USB의 내용은 암호화되지 않습니다. 구매 전에 [U-Saver를 쓰기 전에 확인할 여섯 가지](/blog/ko/before-you-buy)를 확인하세요.
 
 ## USB FAT32 포맷 자주 묻는 질문
 

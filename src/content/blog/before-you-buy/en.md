@@ -4,7 +4,7 @@ description: "Your iPhone, USB format, power, and the other conditions to confir
 date: 2026-11-09
 ---
 
-U-Saver backs up iPhone photos, videos, and contacts to a regular USB drive, with no computer needed. It doesn't yet restore backups from USB to your iPhone. The app is currently being prepared for the App Store. In Korea it costs 4,900 KRW as a one-time purchase. Please check the conditions below before you buy.
+U-Saver backs up iPhone photos, videos, and contacts to a regular USB drive, with no computer needed. It doesn't yet restore backups from USB to your iPhone. The app is available on the App Store. In Korea it costs 4,900 KRW as a one-time purchase. Please check the conditions below before you buy.
 
 ## Which iPhones can use U-Saver?
 
