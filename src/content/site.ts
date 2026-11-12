@@ -9,8 +9,8 @@ export const site = {
   gaMeasurementId: "G-FPGBR792PD",
 } as const;
 
-// 앱이 공개되면 주소를 넣는다. 값이 있으면 홈 히어로 CTA가 클릭 집계되는 App Store 버튼으로 바뀐다.
-export const appStoreUrl: string | null = null;
+// 값이 있으면 홈 히어로 CTA가 클릭 집계되는 App Store 버튼으로 바뀐다. 국가 없는 주소라 Apple이 방문자 스토어로 보낸다.
+export const appStoreUrl: string | null = "https://apps.apple.com/app/id6832455182";
 
 export type FaqSource = Readonly<{ label: string; href: string }>;
 export type FaqItem = Readonly<{ q: string; a: string; sources?: readonly FaqSource[] }>;
