@@ -257,6 +257,22 @@ summary:focus-visible {
   text-decoration: none;
 }
 
+.store-badge {
+  display: inline-flex;
+  border-radius: 9px;
+}
+
+.store-badge img {
+  display: block;
+  height: 52px;
+  width: auto;
+}
+
+.store-badge:focus-visible {
+  outline: 3px solid var(--color-midnight);
+  outline-offset: 3px;
+}
+
 .pill-primary {
   background: var(--color-midnight);
   color: var(--color-white);

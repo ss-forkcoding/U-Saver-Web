@@ -64,7 +64,7 @@ export default async function HomePage({ params }: Props) {
         <p className="lead">{home.heroLead}</p>
         <div className="action-row">
           {appStoreUrl ? (
-            <StoreButton href={appStoreUrl} label={home.storeAction} />
+            <StoreButton href={appStoreUrl} label={home.storeAction} lang={lang} />
           ) : (
             home.heroActions.map((action) => (
               <a key={action.href} className={action.primary ? "pill pill-primary" : "pill"} href={action.href}>
