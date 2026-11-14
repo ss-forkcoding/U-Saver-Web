@@ -1,0 +1,8 @@
+# ai-docs/plans
+ROLE: 문서 · 작업 계획과 측정 기준선
+
+## dirs
+blog-keywords/ → blog-keywords/llm-index.txt (gitignore 대상)
+
+## files
+2026-11-14-analytics-baseline.md — GA·GSC 기준선, 11-14 변경 목록, 12-12 비교 계획

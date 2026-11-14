@@ -4,7 +4,7 @@ ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 개인정보 처리방침 URL,
 
 ## dirs
 .claude/skills/copywriting/ — 이 프로젝트 전용 카피 스킬, coreyhaines31/marketingskills(MIT) 복사본
-ai-docs/plans/blog-keywords/ → ai-docs/plans/blog-keywords/llm-index.txt (gitignore 대상)
+ai-docs/plans/ → ai-docs/plans/llm-index.txt
 public/badges/ — Apple 공식 "Download on the App Store" 배지 SVG ko·en·ja, 수정 금지
 public/brand/u-saver-lockup-light.svg — 머리글 로고, 여백을 잘라낸 웹용 사본
 public/screens/ — 사용 화면 목업에 넣는 앱 캡처 5장, 상태 표시줄을 지운 웹용 webp
