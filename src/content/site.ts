@@ -13,7 +13,7 @@ export const site = {
 export const appStoreUrl: string | null = "https://apps.apple.com/app/id6832455182";
 
 // App Store Connect > 앱 분석 > 캠페인 링크 생성기의 공급자 토큰(pt). 값이 있어야 ct 가 앱 분석에 집계된다.
-export const appStoreProviderToken: string | null = null;
+export const appStoreProviderToken: string | null = "127037476";
 
 // 버튼 위치. GA 이벤트 파라미터와 App Store 캠페인 이름(ct)의 단일 출처다.
 export const storePlacements = ["home_hero", "home_qr"] as const;

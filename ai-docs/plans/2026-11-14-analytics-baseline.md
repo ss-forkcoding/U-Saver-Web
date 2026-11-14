@@ -46,7 +46,7 @@ tags: [analytics, ga4, search-console, seo, conversion]
 
 - [x] `app_store_click`(파라미터 `placement`, `page_lang`)을 GA로 보낸다. 자체 `/api/track` 집계는 그대로 둔다.
 - [x] 데스크톱(마우스 포인터, 폭 861px 이상)의 홈 히어로에 App Store QR을 둔다. 화면에 보이면 `app_store_qr_view`를 보낸다.
-- [x] App Store 링크 캠페인 파라미터 코드(`appStoreLink`)를 넣었다. `appStoreProviderToken`이 null이라 지금은 원래 주소를 쓴다.
+- [x] App Store 링크 캠페인 파라미터 코드(`appStoreLink`)를 넣었다. 공급자 토큰은 남은 일 참조.
 - [x] 스니펫을 수정했다.
   - `en/iphone-otg-usb`: 제목을 "Does iPhone Support OTG?"로 바꾸고 설명에 iPhone 15·16을 넣었다.
   - `ja/iphone-flash-drive-guide`: 제목과 설명을 검색어 "取り外し"에 맞췄다.
@@ -56,8 +56,8 @@ tags: [analytics, ga4, search-console, seo, conversion]
 
 ## 남은 일
 
-- [ ] 배포 후 24시간 안에 GA 관리 > 이벤트에서 `app_store_click`에 별표를 쳐 주요 이벤트로 지정한다. GA는 수집된 적 없는 이벤트를 주요 이벤트로 만들 수 없다.
-- [ ] App Store Connect > 앱 분석 > 캠페인 링크 생성기에서 공급자 토큰(pt)을 확인해 `src/content/site.ts`의 `appStoreProviderToken`에 넣는다.
+- [x] `app_store_click`을 주요 이벤트(ONCE_PER_EVENT)로 지정했다. GA UI는 수집 전 이벤트를 지정하지 못해 Admin API `keyEvents.create`로 만들었다.
+- [x] App Store Connect 캠페인 링크 생성기에서 공급자 토큰 `127037476`을 확인해 `appStoreProviderToken`에 넣었다. 캠페인은 설치한 Apple 계정이 5개 이상이어야 앱 분석에 보인다.
 - [ ] 2026-12-12에 같은 쿼리로 비교한다.
   - 수정 페이지 4개의 CTR과 순위를 본다.
   - `app_store_click`을 placement·page_lang별로 본다.
