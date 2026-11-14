@@ -1,6 +1,6 @@
 ---
-title: "iPhone OTG USB: Which Adapter Do You Need?"
-description: "iPhone OTG USB requirements by port: the right adapter for USB-C and Lightning iPhones, when you need outside power, and what to check if the drive isn't recognized."
+title: "Does iPhone Support OTG? Adapters for iPhone 15, 16 and Lightning"
+description: "Yes. iPhone 15 and later take a USB-C drive with no special OTG cable, and Lightning iPhones need a camera adapter. See which adapter to buy, when you need power, and what to do if the drive isn't recognized."
 date: 2026-11-09
 ---
 
