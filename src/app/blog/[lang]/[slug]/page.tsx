@@ -5,8 +5,11 @@ import remarkGfm from "remark-gfm";
 import { BlogHeader } from "@/components/BlogHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
+import { StoreButton } from "@/components/StoreButton";
+import { StoreQr } from "@/components/StoreQr";
+import { siteCopy } from "@/content/copy";
 import { blogLanguages, blogPath, blogPreview, faqJsonLd, ogImage, publisher } from "@/content/seo";
-import { blogCopy, isLang, site } from "@/content/site";
+import { appStoreUrl, blogCopy, isLang, site, type Lang } from "@/content/site";
 import { extractFaqs, getPost, getSlugs, type Post } from "@/lib/blog";
 
 type Props = Readonly<{ params: Promise<{ lang: string; slug: string }> }>;
@@ -67,6 +70,30 @@ function postJsonLd(post: Post) {
   };
 }
 
+const beforeYouBuySlug = "before-you-buy";
+
+// 검색으로 글에 들어온 사람이 홈을 거치지 않고 스토어로 가는 경로. 스토어 주소가 없으면 그리지 않는다.
+function PostStore({ lang, slug }: Readonly<{ lang: Lang; slug: string }>) {
+  if (!appStoreUrl) return null;
+  const copy = blogCopy[lang];
+  const { storeAction, storeQrCaption } = siteCopy[lang].home;
+  return (
+    <aside className="post-store" aria-labelledby="post-store-title">
+      <h2 id="post-store-title">{copy.storeTitle}</h2>
+      <p>{copy.storeLead}</p>
+      <div className="action-row">
+        <StoreButton href={appStoreUrl} label={storeAction} lang={lang} placement="blog_post_end" />
+        <StoreQr href={appStoreUrl} caption={storeQrCaption} lang={lang} placement="blog_post_qr" />
+      </div>
+      {slug !== beforeYouBuySlug && (
+        <p className="post-store-check">
+          <a href={blogPath(lang, beforeYouBuySlug)}>{copy.storeCheck}</a>
+        </p>
+      )}
+    </aside>
+  );
+}
+
 export default async function BlogPostPage({ params }: Props) {
   const { lang, slug } = await params;
   const post = isLang(lang) ? getPost(lang, slug) : undefined;
@@ -90,6 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="prose">
               <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
             </div>
+            <PostStore lang={post.lang} slug={post.slug} />
             <p className="post-back">
               <a href={`/blog/${post.lang}`}>{blogCopy[post.lang].backToList}</a>
             </p>

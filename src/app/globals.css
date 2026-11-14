@@ -982,6 +982,28 @@ html:lang(ja) h2 {
   margin-top: var(--gap-5);
 }
 
+/* 글을 다 읽은 사람이 홈을 거치지 않고 스토어로 가는 자리. 면은 헤어라인으로만 나눈다. */
+.post-store {
+  margin-top: var(--gap-5);
+  padding-top: var(--gap-4);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.post-store h2 {
+  font-size: var(--text-h2-compact);
+}
+
+.post-store p {
+  margin-top: var(--gap-1);
+}
+
+.post-store-check a {
+  display: inline-block;
+  min-height: 44px;
+  padding-block: 10px;
+  color: var(--color-midnight);
+}
+
 @media (max-width: 640px) {
   :root {
     --panel-inset: 8px;

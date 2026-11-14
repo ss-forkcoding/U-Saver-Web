@@ -16,7 +16,7 @@ export const appStoreUrl: string | null = "https://apps.apple.com/app/id68324551
 export const appStoreProviderToken: string | null = "127037476";
 
 // 버튼 위치. GA 이벤트 파라미터와 App Store 캠페인 이름(ct)의 단일 출처다.
-export const storePlacements = ["home_hero", "home_qr"] as const;
+export const storePlacements = ["home_hero", "home_qr", "blog_post_end", "blog_post_qr"] as const;
 export type StorePlacement = (typeof storePlacements)[number];
 
 // pt 가 없으면 원래 주소를 그대로 쓴다. ct 는 40자 이하라 "web_" + 위치 + 언어로 짓는다.
@@ -52,6 +52,9 @@ export const blogCopy = {
     description: "U-Saver 사용 방법과 구매 전 조건을 정리한 블로그입니다.",
     languageNav: "언어 선택",
     backToList: "글 목록으로 돌아가기",
+    storeTitle: "U-Saver로 컴퓨터 없이 USB에 백업하기",
+    storeLead: "사진, 영상, 연락처를 USB에 저장하는 아이폰 앱입니다. iOS 26 이상에서 쓰고, 4,900원을 한 번 결제합니다.",
+    storeCheck: "구매 전에 확인할 조건 보기",
     empty: "아직 올라온 글이 없습니다.",
     guideTitle: "이 블로그 안내",
     guide: [
@@ -75,6 +78,9 @@ export const blogCopy = {
     description: "Guides to using U-Saver and the conditions to check before you buy.",
     languageNav: "Choose language",
     backToList: "Back to all posts",
+    storeTitle: "Back up to USB without a computer with U-Saver",
+    storeLead: "U-Saver is an iPhone app that saves photos, videos, and contacts to a USB drive. It requires iOS 26 or later.",
+    storeCheck: "Check the conditions before you buy",
     empty: "No posts yet.",
     guideTitle: "About this blog",
     guide: [
@@ -98,6 +104,9 @@ export const blogCopy = {
     description: "U-Saverの使い方と購入前に確認する条件をまとめたブログです。",
     languageNav: "言語を選択",
     backToList: "記事一覧に戻る",
+    storeTitle: "U-SaverでパソコンなしでUSBにバックアップ",
+    storeLead: "写真、ビデオ、連絡先をUSBメモリに保存するiPhoneアプリです。iOS 26以降で使えます。",
+    storeCheck: "購入前に確認する条件を見る",
     empty: "まだ記事はありません。",
     guideTitle: "このブログについて",
     guide: [

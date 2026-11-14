@@ -67,7 +67,7 @@ export default async function HomePage({ params }: Props) {
           {appStoreUrl ? (
             <>
               <StoreButton href={appStoreUrl} label={home.storeAction} lang={lang} placement="home_hero" />
-              <StoreQr href={appStoreUrl} caption={home.storeQrCaption} lang={lang} />
+              <StoreQr href={appStoreUrl} caption={home.storeQrCaption} lang={lang} placement="home_qr" />
             </>
           ) : (
             home.heroActions.map((action) => (
