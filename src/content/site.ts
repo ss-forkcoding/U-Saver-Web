@@ -12,6 +12,23 @@ export const site = {
 // 값이 있으면 홈 히어로 CTA가 클릭 집계되는 App Store 버튼으로 바뀐다. 국가 없는 주소라 Apple이 방문자 스토어로 보낸다.
 export const appStoreUrl: string | null = "https://apps.apple.com/app/id6832455182";
 
+// App Store Connect > 앱 분석 > 캠페인 링크 생성기의 공급자 토큰(pt). 값이 있어야 ct 가 앱 분석에 집계된다.
+export const appStoreProviderToken: string | null = null;
+
+// 버튼 위치. GA 이벤트 파라미터와 App Store 캠페인 이름(ct)의 단일 출처다.
+export const storePlacements = ["home_hero", "home_qr"] as const;
+export type StorePlacement = (typeof storePlacements)[number];
+
+// pt 가 없으면 원래 주소를 그대로 쓴다. ct 는 40자 이하라 "web_" + 위치 + 언어로 짓는다.
+export function appStoreLink(base: string, placement: StorePlacement, lang: Lang): string {
+  if (!appStoreProviderToken) return base;
+  const url = new URL(base);
+  url.searchParams.set("pt", appStoreProviderToken);
+  url.searchParams.set("ct", `web_${placement}_${lang}`);
+  url.searchParams.set("mt", "8");
+  return url.toString();
+}
+
 export type FaqSource = Readonly<{ label: string; href: string }>;
 export type FaqItem = Readonly<{ q: string; a: string; sources?: readonly FaqSource[] }>;
 

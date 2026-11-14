@@ -20,6 +20,7 @@ export const ja = {
     price: "韓国では5,000ウォン未満でずっと使えます",
     heroActions: [{ label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true }],
     storeAction: "App Storeで入手",
+    storeQrCaption: "iPhoneのカメラで読み取るとApp Storeが開きます。",
     optionsEyebrow: "どちらか選ぶだけ",
     optionsTitle: "すべてバックアップしますか、写真のみにしますか?",
     options: [

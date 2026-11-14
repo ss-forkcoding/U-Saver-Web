@@ -20,6 +20,7 @@ export const en = {
     price: "Under 5,000 KRW in Korea, yours for life",
     heroActions: [{ label: "Check if it fits my iPhone", href: "#conditions", primary: true }],
     storeAction: "Get it on the App Store",
+    storeQrCaption: "Scan with your iPhone camera to open the App Store.",
     optionsEyebrow: "Pick one",
     optionsTitle: "Back up all, or photos only?",
     options: [

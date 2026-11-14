@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
 import { StepsShowcase } from "@/components/StepsShowcase";
 import { StoreButton } from "@/components/StoreButton";
+import { StoreQr } from "@/components/StoreQr";
 import { TrackingMascot } from "@/components/TrackingMascot";
 import { siteCopy } from "@/content/copy";
 import { faqJsonLd, publisher, siteAlternates, sitePath, sitePreview } from "@/content/seo";
@@ -64,7 +65,10 @@ export default async function HomePage({ params }: Props) {
         <p className="lead">{home.heroLead}</p>
         <div className="action-row">
           {appStoreUrl ? (
-            <StoreButton href={appStoreUrl} label={home.storeAction} lang={lang} />
+            <>
+              <StoreButton href={appStoreUrl} label={home.storeAction} lang={lang} placement="home_hero" />
+              <StoreQr href={appStoreUrl} caption={home.storeQrCaption} lang={lang} />
+            </>
           ) : (
             home.heroActions.map((action) => (
               <a key={action.href} className={action.primary ? "pill pill-primary" : "pill"} href={action.href}>

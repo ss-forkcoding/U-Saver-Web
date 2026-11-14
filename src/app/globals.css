@@ -239,6 +239,7 @@ summary:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 12px;
   margin-top: var(--gap-3);
 }
@@ -271,6 +272,39 @@ summary:focus-visible {
 .store-badge:focus-visible {
   outline: 3px solid var(--color-midnight);
   outline-offset: 3px;
+}
+
+/* 아이폰을 바로 쓸 수 없는 데스크톱(마우스·넓은 화면)에서만 보인다. */
+.store-qr {
+  display: none;
+  margin: 0;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 861px) {
+  .store-qr {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: var(--gap-1);
+    padding-inline-end: var(--gap-2);
+    border: 1px solid var(--color-hairline);
+    border-radius: 12px;
+    background: var(--color-white);
+    text-align: start;
+  }
+}
+
+.store-qr-code,
+.store-qr-code svg {
+  display: block;
+  width: 88px;
+  height: 88px;
+}
+
+.store-qr figcaption {
+  max-width: 12em;
+  font-size: var(--text-small);
+  line-height: 1.45;
 }
 
 .pill-primary {

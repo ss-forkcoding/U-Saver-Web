@@ -20,6 +20,7 @@ export const ko = {
     price: "5000원도 안되는 돈으로 평생 사용",
     heroActions: [{ label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true }],
     storeAction: "App Store에서 받기",
+    storeQrCaption: "아이폰 카메라로 찍으면 App Store가 열립니다.",
     optionsEyebrow: "하나만 고르세요",
     optionsTitle: "모두 백업할까요, 사진만 백업할까요?",
     options: [

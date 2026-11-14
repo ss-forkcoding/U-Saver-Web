@@ -11,7 +11,9 @@ JsonLd.tsx — 구조화 데이터 script 태그
 LanguageNav.tsx — 사이트 바닥글의 같은 페이지 언어 전환 링크
 Mascot.tsx — 부위별로 나뉜 USB 마스코트 SVG
 PostDate.tsx — 언어별 글 날짜 표시
+QrViewTracker.tsx — QR이 화면에 보이면 GA app_store_qr_view 를 1회 보낸다
 StepsShowcase.tsx — 가운데 아이폰 목업의 화면이 스크롤에 맞춰 바뀌는 사용법
-StoreButton.tsx — 클릭을 집계하는 Apple 공식 App Store 배지 링크, 언어별 SVG
+StoreButton.tsx — 자체 집계와 GA app_store_click 을 보내는 Apple 공식 App Store 배지 링크, 언어별 SVG
+StoreQr.tsx — 데스크톱에서만 보이는 App Store QR, 서버에서 SVG 생성
 TrackingMascot.tsx — 홈 히어로에서 커서 쪽으로 자세를 바꾸는 마스코트
 VisitTracker.tsx — 탭 세션당 방문 1회를 보내는 빈 컴포넌트
