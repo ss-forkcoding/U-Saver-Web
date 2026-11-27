@@ -64,7 +64,15 @@ ko 본문을 다 쓴 뒤 게시 전에 반드시 돌린다.
 5. 윤문 뒤 링크 수와 표 수가 원문과 같은지 확인하고, frontmatter를 다시 붙인다.
 6. 작업 폴더 `_workspace/`는 커밋하지 않는다.
 
-## 7. 게시 전 검사
+## 7. 작성자와 썸네일
+
+- 작성자는 개발자 포크코딩이다. 이름은 `src/content/site.ts`의 `blogCopy[lang].authorName`(ko "포크코딩", en·ja "Fork Coding"), 링크는 `src/content/seo.ts`의 `authorUrl`(https://www.fork-coding.com)이다. 글 머리 표시·`<meta name="author">`·JSON-LD `Person`이 이 값을 쓴다. 본문에 작성자를 따로 적지 않는다.
+- 썸네일은 글마다 하나, `public/blog/<slug>/thumbnail.webp`(1200×675)다. 없으면 빌드가 멈춘다.
+- 만들기: `bun scripts/blog-thumbnail.ts <slug> --note "<장면>"`. codex CLI 이미지 생성으로 ko 제목·요약에 맞춘 그림을 만든다. 빠진 글을 한꺼번에 만들 때는 `--missing`.
+- 장면은 글의 주제를 보여 주는 실제 사물 한두 개로 정한다. 그림 안에 글자·로고·사람 얼굴이 없어야 하고, 단자 모양이 실제와 맞아야 한다. 만든 뒤 그림을 직접 열어 확인하고, 틀리면 `--note`를 고쳐 다시 만든다.
+- 썸네일은 대표 그림일 뿐 직접 경험 근거가 아니다. 본문 사진 3장 규칙(2절)은 그대로다.
+
+## 8. 게시 전 검사
 
 ```bash
 S=<slug>

@@ -6,6 +6,6 @@ feedback/ — core.ts 검증·한도 판단, rate-limit.ts IP별 한도, sheet.t
 metrics/ — core.ts 방문·클릭 이벤트 계약과 봇 판정, client.ts 브라우저 전송, ga.ts GA4 이벤트 이름·파라미터, server.ts zenith 웹훅 증가
 
 ## files
-blog.ts — 마크다운 글 읽기와 번역 누락·frontmatter 검증
+blog.ts — 마크다운 글 읽기와 번역 누락·frontmatter·썸네일 존재 검증
 locale.ts — Accept-Language 기본 언어를 ko·en·ja로 판정, 그 밖은 영어
 mascot-pose.ts — 마스코트 자세 계산과 커서 위치 변환

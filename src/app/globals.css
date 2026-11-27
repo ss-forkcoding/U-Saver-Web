@@ -889,9 +889,36 @@ html:lang(ja) h2 {
 }
 
 .post-list a {
-  display: block;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--gap-3);
+  align-items: start;
   padding: var(--gap-3);
   text-decoration: none;
+}
+
+/* 썸네일은 헤어라인 테두리로만 면을 나눈다. 그림자 없음. */
+.post-list-thumb,
+.post-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--color-hairline);
+  border-radius: 12px;
+}
+
+.post-thumbnail {
+  max-width: 40em;
+  margin: 0 auto var(--gap-4);
+}
+
+@media (max-width: 640px) {
+  .post-list a {
+    grid-template-columns: 1fr;
+    gap: var(--gap-2);
+  }
 }
 
 .post-list a:hover {

@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
-import { fallbackLang, langs, site, type FaqItem, type Lang } from "@/content/site";
+import { blogCopy, fallbackLang, langs, site, type FaqItem, type Lang } from "@/content/site";
 
 // 검색 결과와 링크 미리보기에 쓰는 값의 단일 출처.
 export const publisher = { "@type": "Organization", name: "NextGenAI Co.", url: site.url } as const;
 
 export const siteAuthors = [{ name: publisher.name, url: publisher.url }];
+
+// 블로그 글의 작성자. 개발자 포크코딩(fork-coding.com)이 쓰고 검수한다.
+export const authorUrl = "https://www.fork-coding.com";
+
+export function blogAuthor(lang: Lang) {
+  const name = blogCopy[lang].authorName;
+  return { "@type": "Person", name, alternateName: name === "포크코딩" ? "Fork Coding" : "포크코딩", url: authorUrl } as const;
+}
+
+export function blogAuthors(lang: Lang): NonNullable<Metadata["authors"]> {
+  return [{ name: blogCopy[lang].authorName, url: authorUrl }];
+}
 
 export function faqJsonLd(items: readonly Pick<FaqItem, "q" | "a">[]) {
   return {
@@ -67,19 +79,23 @@ export function sitePreview(lang: Lang, path: string, preview: Preview): Pick<Me
   };
 }
 
-type BlogPreview = Preview & Readonly<{ lang: Lang; path: string; publishedTime?: string }>;
+// 글 썸네일은 1200×675 webp 다. 목록 페이지처럼 썸네일이 없으면 사이트 공통 이미지를 쓴다.
+export type Thumbnail = Readonly<{ url: string; width: number; height: number }>;
 
-export function blogPreview({ lang, path, publishedTime, ...preview }: BlogPreview): Pick<Metadata, "openGraph" | "twitter"> {
+type BlogPreview = Preview & Readonly<{ lang: Lang; path: string; publishedTime?: string; image?: Thumbnail }>;
+
+export function blogPreview({ lang, path, publishedTime, image, ...preview }: BlogPreview): Pick<Metadata, "openGraph" | "twitter"> {
+  const images = image ? [{ ...image, alt: preview.title }] : [ogImage];
   const shared = {
     url: path,
     siteName: site.name,
     locale: ogLocales[lang],
     alternateLocale: langs.filter((item) => item !== lang).map((item) => ogLocales[item]),
     ...preview,
-    images: [ogImage],
+    images,
   };
   return {
     openGraph: publishedTime ? { ...shared, type: "article", publishedTime } : { ...shared, type: "website" },
-    twitter: { card: "summary_large_image", ...preview, images: [ogImage.url] },
+    twitter: { card: "summary_large_image", ...preview, images: [images[0].url] },
   };
 }

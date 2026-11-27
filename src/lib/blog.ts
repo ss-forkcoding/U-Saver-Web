@@ -1,6 +1,7 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import type { Thumbnail } from "@/content/seo";
 import { langs, type Lang } from "@/content/site";
 
 export type Post = Readonly<{
@@ -9,11 +10,21 @@ export type Post = Readonly<{
   title: string;
   description: string;
   date: string;
+  thumbnail: Thumbnail;
   body: string;
 }>;
 
 const postsRoot = join(process.cwd(), "src/content/blog");
 const slugPattern = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+// 썸네일은 scripts/blog-thumbnail.ts 가 public/blog/<slug>/thumbnail.webp 로 만든다. 없으면 빌드를 멈춘다.
+function requireThumbnail(slug: string): Thumbnail {
+  const url = `/blog/${slug}/thumbnail.webp`;
+  if (!existsSync(join(process.cwd(), "public", url))) {
+    throw new Error(`${slug}: 썸네일이 없습니다. bun scripts/blog-thumbnail.ts ${slug} 로 만드세요.`);
+  }
+  return { url, width: 1200, height: 675 };
+}
 
 function requireText(data: Record<string, unknown>, key: string, file: string): string {
   const value = data[key];
@@ -43,6 +54,7 @@ function readPost(slug: string, lang: Lang): Post {
     title: requireText(data, "title", file),
     description: requireText(data, "description", file),
     date: requireDate(data, file),
+    thumbnail: requireThumbnail(slug),
     body,
   };
 }

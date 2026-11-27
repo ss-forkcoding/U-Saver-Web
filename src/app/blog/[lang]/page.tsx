@@ -4,7 +4,8 @@ import { BlogHeader } from "@/components/BlogHeader";
 import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
-import { blogLanguages, blogPath, blogPreview, faqJsonLd, publisher } from "@/content/seo";
+import Image from "next/image";
+import { blogAuthor, blogLanguages, blogPath, blogPreview, faqJsonLd, publisher } from "@/content/seo";
 import { blogCopy, isLang, site } from "@/content/site";
 import { getPosts } from "@/lib/blog";
 
@@ -40,12 +41,13 @@ export default async function BlogListPage({ params }: Props) {
         description: copy.description,
         inLanguage: lang,
         url,
-        author: publisher,
+        author: blogAuthor(lang),
         publisher,
         blogPost: posts.map((post) => ({
           "@type": "BlogPosting",
           headline: post.title,
           datePublished: post.date,
+          image: `${site.url}${post.thumbnail.url}`,
           url: `${site.url}${blogPath(lang, post.slug)}`,
         })),
       },
@@ -72,9 +74,12 @@ export default async function BlogListPage({ params }: Props) {
               {posts.map((post) => (
                 <li key={post.slug}>
                   <a href={`/blog/${lang}/${post.slug}`}>
-                    <PostDate date={post.date} lang={lang} />
-                    <h2>{post.title}</h2>
-                    <p>{post.description}</p>
+                    <Image className="post-list-thumb" src={post.thumbnail.url} alt="" width={post.thumbnail.width} height={post.thumbnail.height} sizes="(max-width: 640px) 100vw, 200px" />
+                    <div>
+                      <PostDate date={post.date} lang={lang} />
+                      <h2>{post.title}</h2>
+                      <p>{post.description}</p>
+                    </div>
                   </a>
                 </li>
               ))}

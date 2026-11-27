@@ -1,0 +1,7 @@
+# scripts
+ROLE: 도구 · 사이트 밖에서 돌리는 보조 스크립트
+빌드에 들어가지 않는다(tsconfig exclude). bun 으로 직접 실행한다.
+
+## files
+blog-thumbnail.ts — codex CLI 이미지 생성으로 블로그 썸네일 public/blog/<slug>/thumbnail.webp(1200×675)를 만든다
+feedback-apps-script.gs — 의견을 시트에 쌓는 Apps Script 원본

@@ -7,5 +7,5 @@ copy/ — 언어별 페이지 문구 ko.ts·en.ts·ja.ts, index.ts siteCopy, typ
 
 ## files
 langs.ts — 지원 언어와 영어 대체 규칙의 단일 출처
-seo.ts — 대체 링크, 링크 미리보기, 게시자 정보
+seo.ts — 대체 링크, 링크 미리보기(글 썸네일), 게시자·블로그 작성자(포크코딩) 정보
 site.ts — 언어와 무관한 사이트 값, 공용 타입, 블로그 문구

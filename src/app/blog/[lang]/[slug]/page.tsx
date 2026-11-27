@@ -8,7 +8,8 @@ import { PostDate } from "@/components/PostDate";
 import { StoreButton } from "@/components/StoreButton";
 import { StoreQr } from "@/components/StoreQr";
 import { siteCopy } from "@/content/copy";
-import { blogLanguages, blogPath, blogPreview, faqJsonLd, ogImage, publisher } from "@/content/seo";
+import Image from "next/image";
+import { authorUrl, blogAuthor, blogAuthors, blogLanguages, blogPath, blogPreview, faqJsonLd, publisher } from "@/content/seo";
 import { appStoreUrl, blogCopy, isLang, site, type Lang } from "@/content/site";
 import { extractFaqs, getPost, getSlugs, type Post } from "@/lib/blog";
 
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | ${site.name}`,
     description: post.description,
+    authors: blogAuthors(post.lang),
     alternates: {
       canonical: blogPath(post.lang, post.slug),
       languages: blogLanguages(post.slug),
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       publishedTime: post.date,
+      image: post.thumbnail,
     }),
   };
 }
@@ -53,8 +56,8 @@ function postJsonLd(post: Post) {
         inLanguage: post.lang,
         url,
         mainEntityOfPage: url,
-        image: `${site.url}${ogImage.url}`,
-        author: publisher,
+        image: `${site.url}${post.thumbnail.url}`,
+        author: blogAuthor(post.lang),
         publisher,
       },
       {
@@ -109,11 +112,20 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="lead">{post.description}</p>
           <div className="meta">
             <PostDate date={post.date} lang={post.lang} />
+            <span>
+              {blogCopy[post.lang].authorLabel}{" "}
+              <a href={authorUrl} rel="author">
+                {blogCopy[post.lang].authorName}
+              </a>
+            </span>
           </div>
         </header>
 
         <div className="rail">
           <div className="rail-section">
+            <figure className="post-thumbnail">
+              <Image src={post.thumbnail.url} alt="" width={post.thumbnail.width} height={post.thumbnail.height} sizes="(max-width: 860px) 100vw, 640px" priority />
+            </figure>
             <div className="prose">
               <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
             </div>
