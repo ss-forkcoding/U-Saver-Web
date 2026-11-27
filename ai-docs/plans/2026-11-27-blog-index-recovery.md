@@ -34,6 +34,9 @@ related: [ai-docs/lessons/2026-11-27-scaled-autopublish-deindex.md, ai-docs/plan
 ## 2단계 — 핵심 5편 보강 (~2026-12-11)
 대상은 노출 상위 5편이다: iphone-otg-usb, format-usb-exfat, iphone-sd-card-reader, iphone-flash-drive-guide, iphone-photos-to-usb.
 
+- [x] 집필 지침을 `.claude/skills/blog-writing/SKILL.md`로 개정했다(im-not-ai humanize-korean v2.4.8 윤문 포함).
+- [x] `iphone-otg-usb` 1차 보강(구조·문장·Apple 문서 재확인, ko 윤문 게이트 OK). 시험 환경 줄·실측·사진은 대기.
+
 편마다 아래를 모두 넣는다.
 - [ ] 실사용 근거: 실제 아이폰 모델, iOS 버전, 저장장치 제품명으로 직접 해 본 결과. 성공과 실패를 같이 적는다.
 - [ ] 이미지 3장 이상: U-Saver 화면이나 파일 앱 화면, 연결 사진. 상태 표시줄은 지운 webp로 넣는다.

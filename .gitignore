@@ -43,3 +43,6 @@ next-env.d.ts
 
 # internal blog keyword plan (do not publish)
 /ai-docs/plans/blog-keywords/
+
+# humanize-korean 윤문 작업 폴더
+_workspace/

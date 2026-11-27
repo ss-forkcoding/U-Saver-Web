@@ -14,7 +14,7 @@ App Store 마케팅 URL(`/`)과 지원 URL(`/support`), 개인정보 처리방�
 
 ### 블로그 글 추가
 
-`src/content/blog/<slug>/` 폴더에 `ko.md`, `en.md`, `ja.md`를 모두 만든다. 하나라도 없거나 frontmatter(`title`, `description`, `date: YYYY-MM-DD`)가 잘못되면 빌드가 실패한다. 본문 제목은 `##`부터 쓴다. 사이트와 블로그는 `html lang` 때문에 루트 레이아웃을 따로 둔다.
+`src/content/blog/<slug>/` 폴더에 `ko.md`, `en.md`, `ja.md`를 모두 만든다. 하나라도 없거나 frontmatter(`title`, `description`, `date: YYYY-MM-DD`)가 잘못되면 빌드가 실패한다. 본문 제목은 `##`부터 쓴다. 사이트와 블로그는 `html lang` 때문에 루트 레이아웃을 따로 둔다. 글을 쓰거나 고치기 전에 `.claude/skills/blog-writing/SKILL.md`(집필·보강 지침)를 읽는다.
 
 ### 블로그 중복 방지
 

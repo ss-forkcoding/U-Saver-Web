@@ -3,6 +3,7 @@ ROLE: 웹 · App Store 마케팅 URL, 지원 URL, 개인정보 처리방침 URL,
 정적 페이지와 ko·en·ja 마크다운 블로그로 구성한다. 문구는 src/content/copy, 글은 src/content/blog 에서 관리한다.
 
 ## dirs
+.claude/skills/blog-writing/SKILL.md — 블로그 집필·보강 지침(2026-11-27 개정: 직접 경험 근거, 틀 금지, U-Saver 사실, im-not-ai 윤문, 게시 전 검사)
 .claude/skills/copywriting/ — 이 프로젝트 전용 카피 스킬, coreyhaines31/marketingskills(MIT) 복사본
 ai-docs/plans/ → ai-docs/plans/llm-index.txt
 public/badges/ — Apple 공식 "Download on the App Store" 배지 SVG ko·en·ja, 수정 금지

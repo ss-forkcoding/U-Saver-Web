@@ -1,94 +1,65 @@
 ---
-title: "Does iPhone Support OTG? Adapters for iPhone 15, 16 and Lightning"
-description: "Yes. iPhone 15 and later take a USB-C drive with no special OTG cable, and Lightning iPhones need a camera adapter. See which adapter to buy, when you need power, and what to do if the drive isn't recognized."
+title: "Does iPhone Support OTG? How to Connect a USB Drive to iPhone 15, 16, 17 and Lightning Models"
+description: "Yes. iPhones read USB flash drives through the right connector or adapter, with no special OTG mode to turn on. See which adapter each iPhone needs, where the drive shows up, and what to check when it isn't recognized."
 date: 2026-11-09
 ---
 
-## Key takeaways
+Yes, an iPhone works with a USB flash drive. Apple never calls it OTG, and there's no setting to switch on. Plug in a drive with the right connector or adapter, and its files show up in the Files app. Which adapter you need depends only on your iPhone's port.
 
-An iPhone can connect to a USB flash drive. Apple's documentation doesn't use the term OTG and lists adapter names and external storage requirements instead.
+## Start with your iPhone's port
 
-iPhone 15 and later have USB-C and take a USB-C flash drive directly. A USB-A drive goes through a USB-C to USB-A adapter.
+iPhone 15 and later have a USB-C port. iPhone 14 and earlier use Lightning. Match the port to the plug on your drive:
 
-A Lightning iPhone needs a Lightning to USB Camera Adapter or a Lightning to USB 3 Camera Adapter.
-
-Devices that draw more power, such as external hard drives, may need outside power.
-
-"Will my Android OTG cable work on an iPhone?" "Which adapter should I buy?" People ask these before buying anything to connect a USB drive to an iPhone.
-
-For iPhone OTG USB connections, the deciding factor is your iPhone's port. Once you know the port, you know which adapter you need.
-
-## Does iPhone support OTG USB?
-
-An iPhone connects to USB flash drives through an adapter or a matching connector. [Apple's guide to external storage](https://support.apple.com/guide/iphone/external-storage-devices-iph95baac91f/ios) says you can use the Files app and other supported apps to access files on a USB drive.
-
-OTG usually means connecting a USB device directly to a phone. For iPhone, searching for "camera adapter" or "USB-C adapter" is the quicker way to find the right product.
-
-## Which adapter does each iPhone port need?
-
-The combination of iPhone port and drive connector decides what you need. iPhone 15 and later use USB-C, and earlier models use Lightning.
-
-| iPhone port | Drive connector | What you need |
+| iPhone port | Drive plug | What you need |
 | --- | --- | --- |
-| USB-C | USB-C | Nothing, plug it in directly |
-| USB-C | USB-A | USB-C to USB-A adapter |
+| USB-C | USB-C | Nothing. Plug it straight in |
+| USB-C | USB-A | A USB-C to USB-A adapter |
 | Lightning | USB-A | Lightning to USB Camera Adapter or Lightning to USB 3 Camera Adapter |
 | Lightning | USB-C | One of those adapters plus a USB-A to USB-C converter. A USB-A drive is simpler |
 
-A micro-USB OTG cable made for Android doesn't fit an iPhone. A USB-C OTG adapter fits the port, but behavior can vary by product. We haven't tested third-party adapters for this guide, and the Lightning adapters in the table are the ones named in Apple's documentation.
+The two Lightning adapters differ in one way: the USB 3 version has a port for a power adapter. That matters for external hard drives, which often need more power than the iPhone supplies. A typical flash drive usually works on the plain adapter.
 
-## How do the two Lightning adapters differ?
+## Will an Android OTG cable work?
 
-According to Apple, a device that needs power should use the Lightning to USB 3 Camera Adapter connected to a USB power adapter.
+A micro-USB OTG cable won't fit any iPhone. A USB-C OTG adapter will fit iPhone 15 and later, but these adapters vary, so check that the drive appears in Files before you rely on it.
 
-| Adapter | External power | Good fit for |
+## Find the drive in the Files app
+
+1. Plug the drive into the iPhone's charging port, through an adapter if needed.
+2. Open Files and tap Browse.
+3. Tap the drive's name under Locations. If Locations isn't showing, tap Browse again.
+
+According to [Apple's external storage guide](https://support.apple.com/guide/iphone/external-storage-devices-iph95baac91f/ios), you can also reformat a drive from the Files app, so you don't need a Mac or PC. Formatting erases everything on the drive, so copy anything you need first.
+
+For moving photos and videos, see [how to transfer iPhone photos to a USB drive](/blog/en/iphone-photos-to-usb). For copying and ejecting files in Files, see [the iPhone flash drive guide](/blog/en/iphone-flash-drive-guide).
+
+## iPhone not recognizing the USB drive? Check these four things
+
+| Check | What Apple requires | Fix |
 | --- | --- | --- |
-| Lightning to USB Camera Adapter | None | Low-power flash drives |
-| Lightning to USB 3 Camera Adapter | Connects to a USB power adapter | Devices that aren't recognized because of low power |
+| Format | APFS, Mac OS Extended (HFS+), exFAT, FAT32 or FAT. NTFS isn't on the list | Reformat as exFAT |
+| Partitions | A single data partition | Reformat as one partition |
+| Power | External hard drives often need their own power | USB-C iPhone: a powered USB hub. Lightning iPhone: the USB 3 Camera Adapter with a power adapter |
+| Adapter | A faulty or incompatible adapter | Try a different drive to test the adapter |
 
-If a USB-C iPhone needs more power, Apple recommends a powered USB hub.
+Drives used on Windows are often NTFS. [Formatting a USB drive as exFAT](/blog/en/format-usb-exfat) walks through the change.
 
-## Does iPhone OTG USB speed vary by model?
+## Speed depends on the model and the cable
 
-[According to Apple](https://support.apple.com/en-us/105099), the iPhone models that support USB 3 data transfer are the iPhone 15 Pro, 16 Pro, 17 Pro, and 18 Pro models, along with iPhone Duo. Those models still need a cable or device that supports USB 3 to reach that speed.
+[Apple lists](https://support.apple.com/en-us/105099) USB 3 speeds of up to 10Gbps on iPhone 15 Pro, 16 Pro, 17 Pro and 18 Pro models and iPhone Duo. Other models transfer at USB 2 speed.
 
-Check this if you move a lot of video. For a handful of photos, the difference is small.
+Even on a Pro model, the cable in the box only supports USB 2. You need a USB 3 cable rated for 10Gbps and a USB 3 drive to get the faster speed. You won't notice it with a few photos. You will with tens of gigabytes of video.
 
-## What if the iPhone doesn't recognize the USB drive?
+## Save photos and contacts to USB with U-Saver
 
-After connecting, check Locations on the Browse screen in the Files app. If the drive's name isn't there, work through this list.
+U-Saver, made by NextGenAI, saves iPhone photos, videos and contacts to an ordinary USB flash drive. It's on the App Store and needs iOS 26 or later. It costs ₩4,900 in Korea as a one-time purchase. The drive must be exFAT or FAT32, and FAT32 can't hold files over 4GB. U-Saver doesn't save messages, app data or iPhone settings, and what it writes to the drive isn't encrypted. Read [six things to check before using U-Saver](/blog/en/before-you-buy) first.
 
-| Order | Cause | How to check |
-| --- | --- | --- |
-| 1 | Not enough power | Reconnect through a powered hub or adapter |
-| 2 | Unsupported format | Check on a PC or Mac. NTFS isn't on Apple's list |
-| 3 | Multiple partitions | Reformat as a single partition |
-| 4 | Adapter problem | Try a different drive to see if the adapter works |
+## FAQ
 
-The steps for copying files are in [how to use a flash drive with an iPhone](/blog/en/iphone-flash-drive-guide). Reformatting erases the drive, so copy its contents first.
+### Does iPhone 15 or 16 support OTG?
 
-## Backing up photos and videos to the connected drive
+Yes. Both have USB-C, so a USB-C flash drive plugs straight in and appears in Files.
 
-You can export photos and videos from the Photos app to a drive connected through an adapter. The steps are in [how to transfer photos from iPhone to USB](/blog/en/iphone-photos-to-usb) and [how to transfer video from iPhone to USB](/blog/en/iphone-videos-to-usb).
+### Do I need to buy an OTG cable?
 
-U-Saver, made by NextGenAI, is an app that saves photos, videos, and contacts to a regular USB drive. A Lightning iPhone needs a USB adapter, and some drives need outside power. The drive must be formatted as exFAT or FAT32.
-
-U-Saver is available on the App Store and requires iOS 26 or later. In Korea it costs 4,900 KRW as a one-time purchase. It doesn't save messages, app data, or iPhone settings, and the contents of the drive aren't encrypted. Before you buy, read [Six things to check before using U-Saver](/blog/en/before-you-buy).
-
-## FAQ: iPhone OTG USB
-
-### Do I need to buy a separate iPhone OTG cable?
-
-Not if you use a USB-C drive with a USB-C iPhone. With a USB-A drive or a Lightning iPhone, you'll need an adapter.
-
-### Can I use an Android OTG adapter on an iPhone?
-
-Micro-USB adapters don't fit. A USB-C adapter may plug in, but behavior varies by product, so confirm the drive appears in the Files app.
-
-### Can I connect an external hard drive to an iPhone?
-
-Yes. Apple notes that external hard drives often need outside power. Use a powered hub, or a Lightning to USB 3 Camera Adapter with a USB power adapter.
-
-### Where do I see the files after connecting a USB drive?
-
-On the Browse screen in the Files app, tap the drive's name under Locations.
+Not if you're plugging a USB-C drive into a USB-C iPhone. For a USB-A drive, or any Lightning iPhone, you need an adapter.
