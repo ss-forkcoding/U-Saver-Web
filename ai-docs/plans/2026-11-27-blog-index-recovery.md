@@ -29,7 +29,7 @@ related: [ai-docs/lessons/2026-11-27-scaled-autopublish-deindex.md, ai-docs/plan
 - [x] `ss-forkcoding` 계정으로 푸시했다(f4acab2).
 - [x] 배포 뒤 지운 URL 3개는 404, 남긴 URL 3개는 200을 반환한다. 사이트맵은 75 URL(글 66 + 블로그 목록 3 + 사이트 6)이다.
 - [x] GSC 「직접 조치」는 "감지된 문제 없음"이다(2026-11-27). 재검토 요청 대상이 아니고, 알고리즘 판정이 풀리기를 기다려야 한다.
-- [ ] GSC에 사이트맵을 다시 제출한다.
+- [x] GSC에 사이트맵을 다시 제출했다. 발견된 페이지 267 → 75로 반영됐다(2026-11-27).
 
 ## 2단계 — 핵심 5편 보강 (~2026-12-11)
 대상은 노출 상위 5편이다: iphone-otg-usb, format-usb-exfat, iphone-sd-card-reader, iphone-flash-drive-guide, iphone-photos-to-usb.
