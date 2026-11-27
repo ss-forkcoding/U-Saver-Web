@@ -26,8 +26,8 @@ related: [ai-docs/lessons/2026-11-27-scaled-autopublish-deindex.md, ai-docs/plan
 ## 1단계 — 정리 배포 (2026-11-27)
 - [x] 자동 발행을 중단했다(MacBook·Mac mini 모두 `enabled=off`, MacBook launchd bootout).
 - [x] 64편을 삭제하고 커밋했다. 깨끗한 클론에서 빌드가 통과했다.
-- [ ] `ss-forkcoding` 계정으로 푸시한다. `nga-system`은 403이 난다.
-- [ ] 배포 뒤 지운 URL은 404, 남긴 URL은 200, 사이트맵은 66 URL인지 확인한다.
+- [x] `ss-forkcoding` 계정으로 푸시했다(f4acab2).
+- [x] 배포 뒤 지운 URL 3개는 404, 남긴 URL 3개는 200을 반환한다. 사이트맵은 75 URL(글 66 + 블로그 목록 3 + 사이트 6)이다.
 - [ ] GSC 「직접 조치」를 확인한다. 조치가 있으면 재검토 요청 문안을 쓴다.
 - [ ] GSC에 사이트맵을 다시 제출한다.
 
