@@ -322,6 +322,7 @@ summary:focus-visible {
 .meta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 0 var(--gap-3);
   margin-top: var(--gap-2);
