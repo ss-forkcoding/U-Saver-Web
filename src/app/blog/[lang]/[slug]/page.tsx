@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="rail">
           <div className="rail-section">
             <figure className="post-thumbnail">
-              <Image src={post.thumbnail.url} alt="" width={post.thumbnail.width} height={post.thumbnail.height} sizes="(max-width: 860px) 100vw, 640px" priority />
+              <Image src={post.thumbnail.url} alt="" width={post.thumbnail.width} height={post.thumbnail.height} sizes="(max-width: 860px) 100vw, 680px" priority />
             </figure>
             <div className="prose">
               <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
