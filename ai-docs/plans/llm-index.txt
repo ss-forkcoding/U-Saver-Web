@@ -6,3 +6,4 @@ blog-keywords/ → blog-keywords/llm-index.txt (gitignore 대상)
 
 ## files
 2026-11-14-analytics-baseline.md — GA·GSC 기준선, 11-14 변경 목록, 12-12 비교 계획
+2026-11-27-blog-index-recovery.md — 사이트 전체 색인 탈락 뒤 22편 보강·재색인 4단계 계획과 2027-01-31 판정 기준
