@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { BlogHeader } from "@/components/BlogHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { PostDate } from "@/components/PostDate";
+import { PostFaq } from "@/components/PostFaq";
 import { StoreButton } from "@/components/StoreButton";
 import { StoreQr } from "@/components/StoreQr";
 import { siteCopy } from "@/content/copy";
@@ -129,6 +130,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="prose">
               <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
             </div>
+            <PostFaq lang={post.lang} />
             <PostStore lang={post.lang} slug={post.slug} />
             <p className="post-back">
               <a href={`/blog/${post.lang}`}>{blogCopy[post.lang].backToList}</a>

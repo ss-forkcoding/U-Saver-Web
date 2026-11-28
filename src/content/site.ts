@@ -57,6 +57,13 @@ export const blogCopy = {
     storeTitle: "U-Saver로 컴퓨터 없이 USB에 백업하기",
     storeLead: "사진, 영상, 연락처를 USB에 저장하는 아이폰 앱입니다. iOS 26 이상에서 쓰고, 4,900원을 한 번 결제합니다.",
     storeCheck: "구매 전에 확인할 조건 보기",
+    faqTitle: "U-Saver 자주 묻는 질문",
+    faqs: [
+      { q: "U-Saver는 무엇을 백업하나요?", a: "아이폰의 사진, 영상, 연락처를 USB에 저장합니다. 메시지, 앱 데이터, 아이폰 설정은 백업하지 않습니다. USB의 백업을 아이폰으로 되돌리는 기능은 아직 없습니다." },
+      { q: "어떤 아이폰과 USB가 필요한가요?", a: "iOS 26 이상인 아이폰과 exFAT 또는 FAT32 형식의 USB가 필요합니다. 4GB가 넘는 영상을 저장하려면 exFAT 형식을 쓰세요." },
+      { q: "USB에 저장한 내용은 암호화되나요?", a: "암호화되지 않습니다. USB를 잃어버리면 다른 사람이 내용을 볼 수 있으니 안전한 곳에 보관하세요." },
+      { q: "가격은 얼마인가요?", a: "4,900원을 한 번 결제합니다. 구독료는 없습니다." },
+    ],
     empty: "아직 올라온 글이 없습니다.",
     guideTitle: "이 블로그 안내",
     guide: [
@@ -85,6 +92,13 @@ export const blogCopy = {
     storeTitle: "Back up to USB without a computer with U-Saver",
     storeLead: "U-Saver is an iPhone app that saves photos, videos, and contacts to a USB drive. It requires iOS 26 or later.",
     storeCheck: "Check the conditions before you buy",
+    faqTitle: "U-Saver FAQ",
+    faqs: [
+      { q: "What does U-Saver back up?", a: "It saves iPhone photos, videos, and contacts to a USB drive. It does not back up messages, app data, or iPhone settings. U-Saver doesn't yet restore backups from USB to your iPhone." },
+      { q: "Which iPhone and USB drive do I need?", a: "You need an iPhone on iOS 26 or later and a USB drive formatted as exFAT or FAT32. To save videos larger than 4GB, use exFAT." },
+      { q: "Is the data on the USB drive encrypted?", a: "No. Anyone who finds the drive can read it, so keep it somewhere safe." },
+      { q: "How much does it cost?", a: "In Korea, U-Saver is a one-time purchase of 4,900 KRW. There is no subscription." },
+    ],
     empty: "No posts yet.",
     guideTitle: "About this blog",
     guide: [
@@ -113,6 +127,13 @@ export const blogCopy = {
     storeTitle: "U-SaverでパソコンなしでUSBにバックアップ",
     storeLead: "写真、ビデオ、連絡先をUSBメモリに保存するiPhoneアプリです。iOS 26以降で使えます。",
     storeCheck: "購入前に確認する条件を見る",
+    faqTitle: "U-Saverのよくある質問",
+    faqs: [
+      { q: "U-Saverは何をバックアップしますか?", a: "iPhoneの写真、ビデオ、連絡先をUSBメモリに保存します。メッセージ、アプリのデータ、iPhoneの設定はバックアップしません。USBメモリのバックアップをiPhoneに戻す機能は、まだありません。" },
+      { q: "どのiPhoneとUSBメモリが必要ですか?", a: "iOS 26以降のiPhoneと、exFATまたはFAT32形式のUSBメモリが必要です。4GBを超えるビデオを保存するにはexFAT形式を使ってください。" },
+      { q: "USBメモリに保存したデータは暗号化されますか?", a: "暗号化されません。USBメモリをなくすと他の人が中身を見られるので、安全な場所に保管してください。" },
+      { q: "価格はいくらですか?", a: "韓国での価格は4,900ウォンの買い切りです。サブスクリプションはありません。" },
+    ],
     empty: "まだ記事はありません。",
     guideTitle: "このブログについて",
     guide: [
