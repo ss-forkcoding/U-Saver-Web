@@ -217,6 +217,7 @@ summary:focus-visible {
 }
 
 .eyebrow {
+  display: block;
   font-family: var(--font-hand), "Apple SD Gothic Neo", sans-serif;
   font-size: var(--text-eyebrow);
   font-weight: 700;

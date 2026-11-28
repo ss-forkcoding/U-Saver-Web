@@ -56,7 +56,8 @@ export default async function HomePage({ params }: Props) {
     <>
       <JsonLd data={homeJsonLd(lang)} />
       <section className="panel panel-usb">
-        <p className="eyebrow">{home.heroEyebrow}</p>
+        {/* 첫 문단은 검색·AI 답변이 요약으로 가져가는 자리라 짧은 머리 문구는 문단(p)으로 두지 않는다. */}
+        <span className="eyebrow">{home.heroEyebrow}</span>
         <h1>
           {home.heroLines[0]}
           <br />

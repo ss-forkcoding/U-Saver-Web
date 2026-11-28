@@ -1,5 +1,5 @@
 ---
-title: "マイクロSDカードフォーマット方法:ほかの機器で使ったmicroSDをiPhone・Mac・Windowsで初期化する手順"
+title: "マイクロSDカードのフォーマット方法:iPhone・Mac・Windows"
 description: "マイクロSDカードのフォーマット方法をまとめました。スマホやカメラで使っていたmicroSDを、iPhone、Mac、Windows、SD Associationのフォーマットソフトでフォーマットし直す手順と、容量別の形式、事前の確認項目を解説します。"
 date: 2026-11-12
 ---
