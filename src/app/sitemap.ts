@@ -9,13 +9,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       {
         url: `${site.url}${blogPath(lang)}`,
-        // 글은 최신순으로 정렬되어 있다.
-        lastModified: posts[0]?.date,
+        // 목록은 가장 최근에 게시하거나 고친 글의 날짜로 바뀐다.
+        lastModified: posts.map((post) => post.updated).toSorted().at(-1),
         alternates: { languages: blogLanguages(undefined, site.url) },
       },
       ...posts.map((post) => ({
         url: `${site.url}${blogPath(lang, post.slug)}`,
-        lastModified: post.date,
+        lastModified: post.updated,
         alternates: { languages: blogLanguages(post.slug, site.url) },
       })),
     ];

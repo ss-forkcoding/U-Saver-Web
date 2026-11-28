@@ -1,9 +1,9 @@
 ---
 name: blog-writing
-description: U-Saver 블로그 글(src/content/blog/<slug>/ko.md·en.md·ja.md)을 새로 쓰거나 보강할 때 쓰는 집필 지침. 2026-11-20 사이트 전체 색인 탈락 뒤 다시 정한 규칙으로, 직접 경험 근거·틀 금지·주제 범위·U-Saver 사실 규칙·한국어 최종 윤문(im-not-ai humanize-korean v2.4.8)·게시 전 검사 명령을 담는다. "블로그 글 써줘", "글 보강", "글 고쳐줘", "새 글", "포스트 수정"이면 이 스킬을 먼저 읽는다.
+description: U-Saver 블로그 글(src/content/blog/<slug>/ko.md·en.md·ja.md)을 새로 쓰거나 보강할 때 쓰는 집필 지침. 2026-11-20 사이트 전체 색인 탈락 뒤 다시 정한 규칙으로, 직접 경험 근거·틀 금지·주제 범위·검색과 AI 답변 노출 규칙(제목·설명 폭, 첫 문단 직접 답, 수치 근거, 수정일)·U-Saver 사실 규칙·한국어 최종 윤문(im-not-ai humanize-korean v2.4.8)·게시 전 검사 명령을 담는다. "블로그 글 써줘", "글 보강", "글 고쳐줘", "새 글", "포스트 수정"이면 이 스킬을 먼저 읽는다.
 ---
 
-# U-Saver 블로그 글쓰기 지침 (2026-11-27 개정)
+# U-Saver 블로그 글쓰기 지침 (2026-11-28 개정)
 
 이 지침은 `ai-docs/plans/blog-keywords/autopublish/prompt.md`와 두 집필 계획의 "글 작성 규칙"을 대체한다.
 개정 이유는 `ai-docs/lessons/2026-11-27-scaled-autopublish-deindex.md`, 진행 상황은 `ai-docs/plans/2026-11-27-blog-index-recovery.md`에 있다.
@@ -37,6 +37,17 @@ description: U-Saver 블로그 글(src/content/blog/<slug>/ko.md·en.md·ja.md)�
 - FAQ는 GSC에 실제로 들어온 검색어가 있을 때만 두고, 3문항 이하로 한다. 본문에 이미 답한 질문을 FAQ로 되풀이하지 않는다.
 - 표는 비교할 값이 3행 이상일 때만 쓴다. 한 글에 2개까지.
 - 내부 링크는 남은 22편 안에서 2~4개만 건다. 링크마다 왜 읽어야 하는지 한 구절을 붙인다.
+
+## 3-1. 검색·AI 답변 노출 규칙 (SEO·GEO·AEO)
+
+2026-11-28 sega 진단(nga-sega 22항목·sega-scan 78쪽)에서 걸린 항목을 규칙으로 옮겼다. `bun scripts/blog-seo-check.ts <slug>`가 아래 1~4를 기계로 검사한다.
+
+1. **제목 폭 60 이하.** 사이트 접미사 " | U-Saver"를 포함해, 한글·가나·한자는 2폭, 영문·숫자·공백은 1폭으로 센다(영문 약 50자, 한글 약 25자). 넘치면 검색 결과에서 뒤가 잘린다. 주 검색어를 제목 앞쪽에 두고, 부제의 나열("A, B, C, D")은 덜어 낸다.
+2. **description 폭 70~160.** 검색 결과 요약 한 덩어리다. 첫 문장에 검색한 질문의 답을 쓰고, 둘째 문장에 이 글에서 볼 것을 쓴다.
+3. **첫 문단 40~320자, 직접 답으로 시작한다.** 검색 답변과 AI 답변이 가져가는 자리다. "X는 ~입니다", "됩니다/안 됩니다"처럼 질문에 바로 답하는 정의 문장으로 연다. 질문형 `##` 바로 뒤 문단도 같은 길이로 답부터 쓴다.
+4. **단위가 붙은 수치 근거 3개 이상.** "많다·빠르다" 대신 4GB, 10Gbps, 사진 1,000장, 4,900원, 10초처럼 쓴다. 수치는 실측이거나 출처가 있는 값만 쓴다(2절). 연도·목록 번호는 수치 근거가 아니다.
+5. **내용을 고치면 `updated: YYYY-MM-DD`를 frontmatter에 넣는다.** `date`(게시일)는 바꾸지 않는다. 사이트맵 lastmod·JSON-LD dateModified·og modified_time·글 머리 "수정" 날짜가 이 값을 쓴다. 오탈자나 제목·설명만 고칠 때는 넣지 않는다 — 실제 변경 없는 수정일은 신뢰 신호를 깎는다.
+6. **본문 FAQ는 3절 규칙대로 둔다.** 글 끝 "U-Saver 자주 묻는 질문"은 `PostFaq` 컴포넌트가 모든 글에 붙이므로, 본문에 U-Saver 가격·형식·암호화 질문을 다시 쓰지 않는다.
 
 ## 4. U-Saver 사실 규칙
 
@@ -80,7 +91,10 @@ rg -c '^## 핵심 요약' src/content/blog/$S/          # 0줄이어야 한다
 rg -n '시험하지 않았|추천하지 않습니다|약속하지 않습니다|did not test|テストしていません' src/content/blog/$S/   # 0줄
 rg -c '^## ' src/content/blog/$S/                    # 언어마다 4~7
 rg -n 'apps.apple.com' src --glob '!src/content/site.ts'   # 0줄
+bun scripts/blog-seo-check.ts $S                     # exit 0 (3-1절 1~5)
 ```
+
+- 배포 뒤 sega로 실제 페이지를 확인한다: `cd ~/Desktop/ProjectMac/NextGenAI/nga-sega && bun run scripts/detail.ts https://usaver.fork-coding.com/blog/ko/$S` (ko·en·ja 모두). 한국어 페이지의 `aeo-direct-answer` 실패는 sega-scan 정의문 판정이 "입니다"를 세지 않아 생기는 오탐이다 — 첫 문단이 3-1절 3번을 지키면 넘어간다. nga-sega의 수치 판정은 GB·ウォン 같은 단위를 세지 않으므로 수치 개수는 `blog-seo-check.ts` 결과를 기준으로 한다.
 
 - 빌드는 깨끗한 클론에서 확인한다. 작업 트리에는 gitignore된 `ai-docs/**/*.ts`가 있어 로컬 `bun run build`가 타입 검사에서 실패한다.
 - 게시 뒤 GSC URL 검사에서 색인 생성을 요청한다(하루 10건 이하).

@@ -16,7 +16,7 @@ export const ko = {
   home: {
     heroEyebrow: "사진은 내 USB에",
     heroLines: ["아이폰 사진을", "컴퓨터 없이 USB에 저장하세요."],
-    heroLead: "영상과 연락처도 저장할 수 있고, 원본은 아이폰에 그대로 남습니다.",
+    heroLead: "iOS 26 이상 아이폰에서 사진, 영상, 연락처를 exFAT·FAT32 USB에 저장합니다. 원본은 아이폰에 그대로 남고, 4,900원을 한 번만 결제합니다.",
     price: "5000원도 안되는 돈으로 평생 사용",
     heroActions: [{ label: "내 아이폰에 맞는지 확인하기", href: "#conditions", primary: true }],
     storeAction: "App Store에서 받기",

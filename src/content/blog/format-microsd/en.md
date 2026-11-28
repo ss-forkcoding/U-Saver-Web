@@ -1,6 +1,6 @@
 ---
-title: "How to Reformat a Micro SD Card on iPhone, Mac, and Windows"
-description: "Need to reformat a micro SD card from a phone or camera? See which format fits each microSD capacity, what to check first, and the steps for the iPhone Files app, Mac Disk Utility, Windows, and the SD Association's formatter."
+title: "How to Reformat a Micro SD Card (iPhone, Mac, PC)"
+description: "Pick the format that fits your microSD capacity, then reformat it in the iPhone Files app, Mac Disk Utility, Windows, or the SD Association formatter."
 date: 2026-11-12
 ---
 

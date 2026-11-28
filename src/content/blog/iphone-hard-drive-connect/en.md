@@ -1,6 +1,6 @@
 ---
-title: "How to Connect an External Hard Drive to iPhone: Power, Formats, Steps, and Direct Saving"
-description: "How to connect an external hard drive to iPhone: adding power, the formats iPhone reads, the steps in the Files app, and the conditions for saving photos and ProRes video straight to the drive, based on Apple's guides."
+title: "Connect an External Hard Drive to iPhone"
+description: "Add power, check the format, open the drive in the Files app, and see when iPhone can save photos and ProRes video straight to an external hard drive."
 date: 2026-11-14
 ---
 

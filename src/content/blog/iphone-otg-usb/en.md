@@ -1,7 +1,8 @@
 ---
-title: "Does iPhone Support OTG? How to Connect a USB Drive to iPhone 15, 16, 17 and Lightning Models"
-description: "Yes. iPhones read USB flash drives through the right connector or adapter, with no special OTG mode to turn on. See which adapter each iPhone needs, where the drive shows up, and what to check when it isn't recognized."
+title: "Does iPhone Support OTG? Connect a USB Drive"
+description: "Yes. iPhone reads USB drives through the right connector or adapter, with no OTG mode to turn on. See the adapter each model needs and what to check."
 date: 2026-11-09
+updated: 2026-11-27
 ---
 
 Yes, an iPhone works with a USB flash drive. Apple never calls it OTG, and there's no setting to switch on. Plug in a drive with the right connector or adapter, and its files show up in the Files app. Which adapter you need depends only on your iPhone's port.

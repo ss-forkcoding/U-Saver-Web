@@ -1,6 +1,6 @@
 ---
-title: "How to Back Up iPhone to External Hard Drive: Direct and Computer Methods"
-description: "To back up iPhone to external hard drive, you copy photos, videos, contacts, and files to the drive item by item. Here are the steps for connecting the drive to your iPhone, the steps through a Mac or Windows PC, and the power requirements, based on Apple and Microsoft guides."
+title: "How to Back Up iPhone to an External Hard Drive"
+description: "Copy iPhone photos, videos, contacts, and files to an external hard drive, either directly or through a Mac or PC, with the power each setup needs."
 date: 2026-11-14
 ---
 

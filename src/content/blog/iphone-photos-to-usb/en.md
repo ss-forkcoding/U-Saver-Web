@@ -1,5 +1,5 @@
 ---
-title: "How to Transfer Photos from iPhone to USB in 3 Steps"
+title: "Transfer Photos from iPhone to USB in 3 Steps"
 description: "How to transfer photos from iPhone to USB without a computer: connecting the drive, exporting originals, and choosing a format that handles files over 4GB."
 date: 2026-11-09
 ---

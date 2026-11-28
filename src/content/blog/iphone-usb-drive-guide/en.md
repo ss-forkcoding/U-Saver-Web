@@ -1,6 +1,6 @@
 ---
-title: "iPhone Flash Drive Guide: Ports, Formats, Capacity, and Backups"
-description: "Everything to check before using an iPhone flash drive: the right connector, adapter, format, and capacity, plus where to go for photos, videos, and backups."
+title: "iPhone Flash Drive Guide: Ports, Formats, Backups"
+description: "What to check before using an iPhone flash drive: connector, adapter, format, and capacity, plus where to go for photos, videos, and backups."
 date: 2026-11-10
 ---
 

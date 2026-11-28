@@ -1,6 +1,6 @@
 ---
-title: "How to Format an SD Card as FAT32 or exFAT on iPhone, Mac, and Windows"
-description: "Want to format an SD card as FAT32? See which format fits each card capacity, then follow the steps for the iPhone Files app, Mac Disk Utility, Windows, and the SD Association's formatter."
+title: "How to Format an SD Card to FAT32 or exFAT"
+description: "Which format fits each SD card capacity, and how to format the card in the iPhone Files app, Mac Disk Utility, Windows, or the SD Association formatter."
 date: 2026-11-12
 ---
 

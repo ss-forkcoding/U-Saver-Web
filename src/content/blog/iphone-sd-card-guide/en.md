@@ -1,6 +1,6 @@
 ---
-title: "SD Card Reader for iPhone: The Complete Guide to Cards, Formats, Photos, and Fixes"
-description: "Everything to check before using an SD card reader for iPhone: the right reader for your port, supported cards and formats, Photos vs. Files, and what to do when the card doesn't show up."
+title: "SD Card Reader for iPhone: Complete Guide"
+description: "The reader for your iPhone port, supported cards and formats, Photos vs. Files, and what to do when the SD card doesn't show up."
 date: 2026-11-13
 ---
 

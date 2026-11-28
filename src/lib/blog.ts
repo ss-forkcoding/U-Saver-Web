@@ -10,6 +10,8 @@ export type Post = Readonly<{
   title: string;
   description: string;
   date: string;
+  /** 내용을 고친 날. frontmatter `updated` 가 없으면 date 와 같다. */
+  updated: string;
   thumbnail: Thumbnail;
   body: string;
 }>;
@@ -34,13 +36,21 @@ function requireText(data: Record<string, unknown>, key: string, file: string): 
   return value.trim();
 }
 
-function requireDate(data: Record<string, unknown>, file: string): string {
-  const value = data.date;
+function requireDate(data: Record<string, unknown>, file: string, key: "date" | "updated" = "date"): string {
+  const value = data[key];
   const date = value instanceof Date ? value : new Date(String(value));
   if (Number.isNaN(date.getTime())) {
-    throw new Error(`${file}: frontmatter "date" 는 YYYY-MM-DD 형식이어야 합니다.`);
+    throw new Error(`${file}: frontmatter "${key}" 는 YYYY-MM-DD 형식이어야 합니다.`);
   }
   return date.toISOString().slice(0, 10);
+}
+
+// 고친 날은 선택이다. 게시일보다 앞서면 빌드를 멈춘다.
+function readUpdated(data: Record<string, unknown>, file: string, date: string): string {
+  if (data.updated === undefined) return date;
+  const updated = requireDate(data, file, "updated");
+  if (updated < date) throw new Error(`${file}: frontmatter "updated"(${updated}) 가 "date"(${date}) 보다 앞섭니다.`);
+  return updated;
 }
 
 function readPost(slug: string, lang: Lang): Post {
@@ -48,12 +58,14 @@ function readPost(slug: string, lang: Lang): Post {
   const { data, content } = matter(readFileSync(join(postsRoot, file), "utf8"));
   const body = content.trim();
   if (body === "") throw new Error(`${file}: 본문이 비어 있습니다.`);
+  const date = requireDate(data, file);
   return {
     slug,
     lang,
     title: requireText(data, "title", file),
     description: requireText(data, "description", file),
-    date: requireDate(data, file),
+    date,
+    updated: readUpdated(data, file, date),
     thumbnail: requireThumbnail(slug),
     body,
   };

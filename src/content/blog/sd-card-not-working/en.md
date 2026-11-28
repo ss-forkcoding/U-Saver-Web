@@ -1,6 +1,6 @@
 ---
-title: "SD Card Corrupted or Not Recognized? Check, Repair, and Reformat It"
-description: "Is your SD card corrupted, locked, or not showing up? Follow the checks in order: the lock switch, the connection, a file system repair with First Aid or chkdsk, the drive letter, and a reformat with the SD Association's formatter."
+title: "SD Card Corrupted or Not Recognized? Fix It"
+description: "Check the lock switch and connection, repair the file system with First Aid or chkdsk, assign a drive letter, then reformat with the SD Association tool."
 date: 2026-11-13
 ---
 

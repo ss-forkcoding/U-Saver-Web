@@ -1,5 +1,5 @@
 ---
-title: "How to Transfer Video from iPhone to USB, Even Files Over 4GB"
+title: "Transfer Video from iPhone to USB, Even Over 4GB"
 description: "How to transfer video from iPhone to USB: check the file size, pick the right drive format, save edited clips, and confirm the video plays."
 date: 2026-11-09
 ---

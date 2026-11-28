@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       publishedTime: post.date,
+      modifiedTime: post.updated,
       image: post.thumbnail,
     }),
   };
@@ -54,6 +55,7 @@ function postJsonLd(post: Post) {
         headline: post.title,
         description: post.description,
         datePublished: post.date,
+        dateModified: post.updated,
         inLanguage: post.lang,
         url,
         mainEntityOfPage: url,
@@ -113,6 +115,11 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="lead">{post.description}</p>
           <div className="meta">
             <PostDate date={post.date} lang={post.lang} />
+            {post.updated !== post.date && (
+              <span>
+                {blogCopy[post.lang].updatedLabel} <PostDate date={post.updated} lang={post.lang} />
+              </span>
+            )}
             <span>
               {blogCopy[post.lang].authorLabel}{" "}
               <a href={authorUrl} rel="author">

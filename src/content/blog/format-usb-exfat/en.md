@@ -1,5 +1,5 @@
 ---
-title: "How to Format a USB Drive to exFAT on iPhone, Mac, and Windows"
+title: "Format a USB Drive to exFAT on iPhone, Mac, or PC"
 description: "Format a USB drive to exFAT from the iPhone Files app, Mac Disk Utility, or Windows. Includes what to check first and how exFAT differs from FAT32."
 date: 2026-11-10
 ---

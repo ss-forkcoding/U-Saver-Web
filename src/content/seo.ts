@@ -50,11 +50,12 @@ export function sitePath(lang: Lang, path = ""): string {
   return `/${lang}${path}`;
 }
 
-// x-default 는 언어 없는 주소다. 이 주소는 브라우저 언어에 맞는 페이지로 보낸다.
+// x-default 는 기본 언어(영어) 주소다. 언어 없는 주소(/)는 307 로 언어 페이지에 보내므로 x-default 로 쓰면
+// Google 이 /en 대신 / 를 표준 URL 로 골라 /en 이 색인에서 빠진다(2026-11-28 URL 검사).
 export function siteLanguages(path = "", origin = ""): Record<string, string> {
   return {
     ...Object.fromEntries(langs.map((lang) => [lang, `${origin}${sitePath(lang, path)}`])),
-    "x-default": `${origin}${path || "/"}`,
+    "x-default": `${origin}${sitePath(fallbackLang, path)}`,
   };
 }
 
@@ -82,9 +83,9 @@ export function sitePreview(lang: Lang, path: string, preview: Preview): Pick<Me
 // 글 썸네일은 1200×675 webp 다. 목록 페이지처럼 썸네일이 없으면 사이트 공통 이미지를 쓴다.
 export type Thumbnail = Readonly<{ url: string; width: number; height: number }>;
 
-type BlogPreview = Preview & Readonly<{ lang: Lang; path: string; publishedTime?: string; image?: Thumbnail }>;
+type BlogPreview = Preview & Readonly<{ lang: Lang; path: string; publishedTime?: string; modifiedTime?: string; image?: Thumbnail }>;
 
-export function blogPreview({ lang, path, publishedTime, image, ...preview }: BlogPreview): Pick<Metadata, "openGraph" | "twitter"> {
+export function blogPreview({ lang, path, publishedTime, modifiedTime, image, ...preview }: BlogPreview): Pick<Metadata, "openGraph" | "twitter"> {
   const images = image ? [{ ...image, alt: preview.title }] : [ogImage];
   const shared = {
     url: path,
@@ -95,7 +96,7 @@ export function blogPreview({ lang, path, publishedTime, image, ...preview }: Bl
     images,
   };
   return {
-    openGraph: publishedTime ? { ...shared, type: "article", publishedTime } : { ...shared, type: "website" },
+    openGraph: publishedTime ? { ...shared, type: "article", publishedTime, modifiedTime: modifiedTime ?? publishedTime } : { ...shared, type: "website" },
     twitter: { card: "summary_large_image", ...preview, images: [images[0].url] },
   };
 }

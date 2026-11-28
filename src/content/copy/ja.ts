@@ -16,7 +16,7 @@ export const ja = {
   home: {
     heroEyebrow: "写真は自分のUSBに",
     heroLines: ["iPhoneの写真を", "パソコンなしでUSBメモリに保存。"],
-    heroLead: "動画と連絡先も保存でき、元のデータはiPhoneにそのまま残ります。",
+    heroLead: "iOS 26以降のiPhoneで、写真、動画、連絡先をexFAT・FAT32形式のUSBメモリに保存します。元のデータはiPhoneに残り、料金は4,900ウォンの買い切りです。",
     price: "韓国では5,000ウォン未満でずっと使えます",
     heroActions: [{ label: "自分のiPhoneで使えるか確認", href: "#conditions", primary: true }],
     storeAction: "App Storeで入手",

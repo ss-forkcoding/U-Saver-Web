@@ -1,6 +1,6 @@
 ---
-title: "Connecting an SSD to iPhone: Cables, Formats, Power, and Speed"
-description: "What you need for connecting an SSD to iPhone: the right cable or adapter, the formats iPhone reads, what to do when power runs short, and transfer speeds by model, based on Apple's guides."
+title: "Connecting an SSD to iPhone: Cable, Format, Power"
+description: "What you need to connect an SSD to iPhone: the right cable or adapter, the formats iPhone reads, extra power, and transfer speed by model."
 date: 2026-11-13
 ---
 

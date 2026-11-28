@@ -1,6 +1,6 @@
 ---
-title: "Micro SD for iPhone: How to Connect a microSD Card, Move Photos, and Check the Format"
-description: "To use a micro SD for iPhone, you need a card reader with a microSD slot. Here are the readers, card formats by capacity, and the steps in the Photos and Files apps, based on Apple and SD Association guides."
+title: "Micro SD for iPhone: Readers, Formats, Photos"
+description: "To use a micro SD card with iPhone, you need a reader with a microSD slot. See which readers work, the format for each capacity, and the photo steps."
 date: 2026-11-12
 ---
 

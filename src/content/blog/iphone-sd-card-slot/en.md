@@ -1,6 +1,6 @@
 ---
-title: "Can You Plug an SD Card into an iPhone? What You Need to Connect One"
-description: "You can't plug an SD card into an iPhone directly because there's no card slot. See which SD card reader fits your iPhone, which card formats work, and how to import and export photos."
+title: "Can You Plug an SD Card into an iPhone?"
+description: "iPhone has no SD card slot, so you need a reader. See which SD card reader fits your iPhone, which card formats work, and how to move photos."
 date: 2026-11-11
 ---
 

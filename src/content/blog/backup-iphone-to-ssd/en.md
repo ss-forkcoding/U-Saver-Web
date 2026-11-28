@@ -1,6 +1,6 @@
 ---
-title: "Backup iPhone to SSD: How to Save Photos, Videos, and Contacts to an External SSD"
-description: "A backup iPhone to SSD routine means copying photos, videos, contacts, and files to an external SSD item by item. Here's how to prepare the SSD, the steps for each item, and what an SSD can't hold, based on Apple's guides."
+title: "Backup iPhone to SSD: Photos, Videos, Contacts"
+description: "How to prepare an external SSD, copy photos, videos, contacts, and files from iPhone item by item, and what an SSD backup can't hold."
 date: 2026-11-13
 ---
 

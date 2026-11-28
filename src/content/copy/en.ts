@@ -16,7 +16,7 @@ export const en = {
   home: {
     heroEyebrow: "Your photos, on your USB",
     heroLines: ["Save iPhone photos to USB.", "No computer needed."],
-    heroLead: "Save videos and contacts too. The originals stay on your iPhone.",
+    heroLead: "Save photos, videos, and contacts to an exFAT or FAT32 USB drive on iOS 26 or later. The originals stay on your iPhone, and you pay 4,900 KRW once.",
     price: "Under 5,000 KRW in Korea, yours for life",
     heroActions: [{ label: "Check if it fits my iPhone", href: "#conditions", primary: true }],
     storeAction: "Get it on the App Store",

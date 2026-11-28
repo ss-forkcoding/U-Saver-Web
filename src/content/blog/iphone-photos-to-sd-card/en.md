@@ -1,6 +1,6 @@
 ---
-title: "Transferring Photos from iPhone to SD Card: Steps, Card Formats, and Limits"
-description: "A guide to transferring photos from iPhone to SD card: the reader you need, which card format to use, how to export originals from Photos, and what to check before you delete anything, based on Apple's guides."
+title: "Transferring Photos from iPhone to SD Card"
+description: "The reader you need, the card format to use, how to export original photos from iPhone to an SD card, and what to check before you delete anything."
 date: 2026-11-11
 ---
 

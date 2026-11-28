@@ -1,6 +1,6 @@
 ---
-title: "How to Use an iPhone SD Card Reader: Import Photos, Copy Files, and Fix Problems"
-description: "Here's how to use an iPhone SD card reader in the Photos and Files apps: supported cards, importing photos, copying files, and what to check when an import fails, based on Apple's guides."
+title: "How to Use an iPhone SD Card Reader"
+description: "Import photos and copy files with an iPhone SD card reader in the Photos and Files apps, plus supported cards and what to check when an import fails."
 date: 2026-11-11
 ---
 
